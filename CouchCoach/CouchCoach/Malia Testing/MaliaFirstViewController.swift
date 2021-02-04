@@ -10,12 +10,23 @@ import UIKit
 
 class MaliaFirstViewController: UIViewController {
 
+    var videos : [Video] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        print(retrieveSearchResults(q: "puppies", completionHandler: {(response, error) in
+            if let response = response{
+                self.videos = response
+                print(self.videos)
+            }
+        }))
+        
     }
     
+
 
     /*
     // MARK: - Navigation

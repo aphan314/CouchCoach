@@ -8,4 +8,9 @@ target 'CouchCoach' do
   # Pods for CouchCoach
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  
+  # malia added these and hopes they work from personal accnt
+  pod 'GoogleAPIClientForREST/YouTube', '~> 1.2.1'
+  pod 'Google/SignIn', '~> 3.0.3'
 end
+ 
