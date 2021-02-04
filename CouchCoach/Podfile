@@ -8,4 +8,5 @@ target 'CouchCoach' do
   # Pods for CouchCoach
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'TTGTagCollectionView'
 end

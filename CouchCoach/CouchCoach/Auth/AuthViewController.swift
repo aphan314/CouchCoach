@@ -8,8 +8,7 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     let authToHomeIdentifier = "authPresentHome"
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         errorText.text = ""
         super.viewDidLoad()
     }
@@ -77,6 +76,17 @@ class AuthViewController: UIViewController {
                 }
             }
             else{
+                let db = Firestore.firestore()
+                
+                db.collection("users").document(authResult!.user.uid).setData(["email":email])
+//                db.collection("users").addDocument(data: ["email":email, "uid":authResult!.user.uid]) { (error) in
+//                    if error != nil{
+//                        print("ERR")
+//                        self?.errorText?.text = "Error In Completing Database"
+//                        return
+//                    }
+//                }
+                
                 guard let strongSelf = self else { return }
                 strongSelf.performSegue(withIdentifier: strongSelf.authToHomeIdentifier, sender: nil)
             }

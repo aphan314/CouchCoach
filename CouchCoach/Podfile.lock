@@ -301,10 +301,12 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - TTGTagCollectionView (1.11.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
+  - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
@@ -323,6 +325,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -340,7 +343,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: 1c9a5b1e3c05953d7e28d9fb1a6859182e24dd2d
+PODFILE CHECKSUM: 66c59aa6326cfbd3bb010b023b5d589fb296379a
 
 COCOAPODS: 1.10.1

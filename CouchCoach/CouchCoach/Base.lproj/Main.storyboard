@@ -59,9 +59,8 @@
                                     <action selector="createUserButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xZU-h3-wbN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="error message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-KG-i6z">
-                                <rect key="frame" x="20" y="687" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-KG-i6z">
+                                <rect key="frame" x="152" y="687" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,10 +70,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="n2O-19-xdn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="0ca-TR-IBj"/>
+                            <constraint firstItem="qoY-KG-i6z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="30U-NN-Cpr"/>
                             <constraint firstItem="aN2-FX-GOj" firstAttribute="top" secondItem="kte-A0-gqn" secondAttribute="bottom" constant="15" id="3kn-oF-sVI"/>
                             <constraint firstItem="56c-Ts-uAh" firstAttribute="top" secondItem="PBt-zg-dz9" secondAttribute="bottom" constant="8" id="7uA-I6-4cO"/>
                             <constraint firstItem="56c-Ts-uAh" firstAttribute="leading" secondItem="PBt-zg-dz9" secondAttribute="leading" id="AX5-dg-bJm"/>
                             <constraint firstItem="PBt-zg-dz9" firstAttribute="top" secondItem="aN2-FX-GOj" secondAttribute="bottom" constant="53" id="By8-uT-CcO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qoY-KG-i6z" secondAttribute="bottom" constant="154" id="De3-CV-OdB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kte-A0-gqn" secondAttribute="trailing" constant="18" id="J7r-Gl-7NE"/>
                             <constraint firstItem="HD5-mX-mRl" firstAttribute="top" secondItem="sBz-SM-490" secondAttribute="bottom" constant="40" id="UlA-9S-TMR"/>
                             <constraint firstItem="sBz-SM-490" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Uqq-cM-fRA"/>
@@ -82,6 +83,7 @@
                             <constraint firstItem="sBz-SM-490" firstAttribute="top" secondItem="56c-Ts-uAh" secondAttribute="bottom" constant="102" id="Z1a-kW-Xxg"/>
                             <constraint firstItem="kte-A0-gqn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="aSf-lU-BIp"/>
                             <constraint firstItem="HD5-mX-mRl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cMn-Qu-Qhv"/>
+                            <constraint firstItem="qoY-KG-i6z" firstAttribute="top" secondItem="HD5-mX-mRl" secondAttribute="bottom" constant="20" id="cqg-v1-1kP"/>
                             <constraint firstItem="aN2-FX-GOj" firstAttribute="trailing" secondItem="kte-A0-gqn" secondAttribute="trailing" id="dx4-YA-mWV"/>
                             <constraint firstItem="56c-Ts-uAh" firstAttribute="trailing" secondItem="PBt-zg-dz9" secondAttribute="trailing" id="gzv-iG-jVV"/>
                             <constraint firstItem="n2O-19-xdn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="h7d-HB-Z2V"/>
