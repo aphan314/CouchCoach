@@ -22,6 +22,7 @@
 		38DF866B25C3840F003C1369 /* MaliaFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF866A25C3840F003C1369 /* MaliaFirstViewController.swift */; };
 		38DF866D25C38B06003C1369 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38DF866C25C38B06003C1369 /* GoogleService-Info.plist */; };
 		38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF866F25C38B8A003C1369 /* AuthViewController.swift */; };
+		38DF867325C9D944003C1369 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF867225C9D944003C1369 /* CalendarViewController.swift */; };
 		806B67A5CCE0DB4D5F6FEA38 /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264A41986DA4CE5537FF2591 /* Pods_CouchCoach.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		38DF866A25C3840F003C1369 /* MaliaFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaliaFirstViewController.swift; sourceTree = "<group>"; };
 		38DF866C25C38B06003C1369 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38DF866F25C38B8A003C1369 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		38DF867225C9D944003C1369 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C6ECC8EE733007A86B275301 /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */,
 				38DF866525C38366003C1369 /* Alice Testing */,
 				38DF866425C3835B003C1369 /* Malia Testing */,
+				38DF867125C9D91E003C1369 /* Calendar */,
 				38DF861025C0DE1F003C1369 /* ViewController.swift */,
 				38DF861225C0DE1F003C1369 /* Main.storyboard */,
 				38DF861825C0DE20003C1369 /* Assets.xcassets */,
@@ -140,6 +143,14 @@
 				38DF866F25C38B8A003C1369 /* AuthViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		38DF867125C9D91E003C1369 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				38DF867225C9D944003C1369 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		47D5084F882AD0AEE2559DD3 /* Frameworks */ = {
@@ -275,6 +286,7 @@
 				38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */,
 				38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */,
 				38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */,
+				38DF867325C9D944003C1369 /* CalendarViewController.swift in Sources */,
 				38DF866925C383F3003C1369 /* AliceFirstViewController.swift in Sources */,
 				38DF861725C0DE1F003C1369 /* CouchCoach.xcdatamodeld in Sources */,
 			);
