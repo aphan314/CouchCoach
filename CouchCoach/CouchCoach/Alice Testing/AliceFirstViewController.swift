@@ -1,21 +1,33 @@
-//
-//  AliceFirstViewController.swift
-//  CouchCoach
-//
-//  Created by Miguel Barba on 1/28/21.
-//  Copyright © 2021 GetFit. All rights reserved.
-//
-
 import UIKit
 
 class AliceFirstViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        @IBOutlet weak var businessTableView: UITableView!
+        
+        let Latitude: Double = 33.6523
+        let Longitude: Double = -117.8341
+        
+        var businesses: [Business] = []
 
-        // Do any additional setup after loading the view.
-    }
-    
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            businessTableView.delegate = self
+            businessTableView.dataSource = self
+            businessTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
+            businessTableView.separatorStyle = .none
+            
+            retrieveBusinesses(latitude: Latitude, longitude: Longitude, term: "food",
+                           limit: 20, sortBy: "distance", locale: "en_US") { (response, error) in
+                            
+                            if let response = response {
+                                self.businesses = response
+                                DispatchQueue.main.async {
+                                    self.businessTableView.reloadData()
+                                }
+                            }
+            }
+        }
 
     /*
     // MARK: - Navigation
@@ -27,4 +39,27 @@ class AliceFirstViewController: UIViewController {
     }
     */
 
+}
+
+extension AliceFirstViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return businesses.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+        
+        cell.nameLabel.text = businesses[indexPath.row].name
+        cell.ratingLabel.text = String(businesses[indexPath.row].rating ?? 0.0)
+        cell.priceLabel.text = businesses[indexPath.row].price ?? "-"
+        cell.isClosed = businesses[indexPath.row].is_closed ?? false
+        cell.addressLabel.text = businesses[indexPath.row].address
+        
+        return cell
+    }
 }
