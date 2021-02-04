@@ -6,6 +6,6 @@ target 'CouchCoach' do
   use_frameworks!
  
   # Pods for CouchCoach
-  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
 end
