@@ -4,11 +4,12 @@ import Firebase
 class AuthViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var errorText: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     
     let authToHomeIdentifier = "authPresentHome"
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
+        errorText.text = ""
         super.viewDidLoad()
     }
     
@@ -22,9 +23,24 @@ class AuthViewController: UIViewController {
         
         // at this point username and password have  text
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
+            if error != nil{
+                if let error = AuthErrorCode(rawValue: error!._code){
+                    switch error{
+                    case .invalidEmail:
+                        self?.errorText?.text = "Invalid Email"
+                    case .wrongPassword:
+                        self?.errorText?.text = "Incorrect Password"
+                    default:
+                        self?.errorText?.text = "Login Error: \(error)"
+                        
+                    }
+                }
+            }
+            else{
+                guard let strongSelf = self else { return }
           // ...
-            strongSelf.performSegue(withIdentifier: strongSelf.authToHomeIdentifier, sender: nil)
+                strongSelf.performSegue(withIdentifier: strongSelf.authToHomeIdentifier, sender: nil)
+            }
         }
     }
     
@@ -35,12 +51,48 @@ class AuthViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
+        if email.isEmpty{
+            errorText.text = "Email Is Missing"
+            return
+        }
+        if password.isEmpty{
+            errorText.text = "Password Is Missing"
+            return
+        }
         
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
           // ...
-            guard let strongSelf = self else { return }
+            if error != nil {
+                if let error = AuthErrorCode(rawValue: error!._code){
+                    switch error{
+                    case .invalidEmail:
+                        self?.errorText?.text = "Invalid Email"
+                    case .emailAlreadyInUse:
+                        self?.errorText?.text = "Email Already In Use"
+                    default:
+                        self?.errorText?.text = "Registration Error: \(error)"
+                        
+                    }
+                }
+            }
+            else{
+                let db = Firestore.firestore()
+                
+                db.collection("users").document(authResult!.user.uid).setData(["email":email])
+//                db.collection("users").addDocument(data: ["email":email, "uid":authResult!.user.uid]) { (error) in
+//                    if error != nil{
+//                        print("ERR")
+//                        self?.errorText?.text = "Error In Completing Database"
+//                        return
+//                    }
+//                }
+                
+                guard let strongSelf = self else { return }
+                strongSelf.performSegue(withIdentifier: strongSelf.authToHomeIdentifier, sender: nil)
+            }
             
-            strongSelf.performSegue(withIdentifier: strongSelf.authToHomeIdentifier, sender: nil)
+            
+            
         }
     }
 }
