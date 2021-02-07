@@ -16,11 +16,11 @@ class MaliaFirstViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        print("hello")
         print(retrieveSearchResults(q: "puppies", completionHandler: {(response, error) in
             if let response = response{
                 self.videos = response
-                print(self.videos)
+                print(self.videos[1].channelTitle)
             }
         }))
         
