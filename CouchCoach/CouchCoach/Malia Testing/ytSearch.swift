@@ -19,7 +19,7 @@ extension MaliaFirstViewController {
         let maxResult = 5
         
         // YouTube API Key:
-        let apiKey = "AIzaSyDt-LrwxlPHH57-9pNVRMMN0LHHDwG-Tnk"
+        let apiKey = ""
         
         // url
         let baseURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(q)&order=\(order)&safeSearch=\(safeSearch)&maxResult=\(maxResult)&key=\(apiKey)"
