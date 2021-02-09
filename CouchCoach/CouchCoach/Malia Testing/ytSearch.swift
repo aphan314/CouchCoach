@@ -65,9 +65,9 @@ extension MaliaFirstViewController {
                     video.videoTitle = snippetStuff.value(forKey: "title") as! String
                     video.published = snippetStuff.value(forKey: "publishedAt") as! String
                     // getting url thumbnails
-                    //let thumbnails = snippetStuff.value(forKey: "thumbnails") as! NSDictionary
-                    //video.thumbnails = ["default"]
-                   
+                    let thumbnails = snippetStuff.value(forKey: "thumbnails") as! NSDictionary
+                    let defaultThumbnail = thumbnails.value(forKey: "default") as! NSDictionary
+                    video.thumbnail = defaultThumbnail.value(forKey: "url") as! String
                     Videos.append(video)
                 }
             completionHandler(Videos, nil)

@@ -11,7 +11,7 @@ import Foundation
 class Video{
     var videoTitle : String
     var channelTitle : String
-    var thumbnails : [ String : URL ]
+    var thumbnail : String
     var published : String
     var videoId : String
     var tags : [String]
@@ -22,7 +22,7 @@ class Video{
         self.published = ""
         self.videoId = ""
         self.tags = []
-        self.thumbnails = [String:URL]()
+        self.thumbnail = ""
     }
     
     func getVideo() -> String{
@@ -32,13 +32,13 @@ class Video{
     func getchannelTitle() -> String{
         return self.channelTitle
     }
-    /*
-    func getVideoUrl() -> URL?{ // format: https: //www.youtube.com/watch?v=[videoId]&ab_channel=[channelTitle]
-        return
+    
+    func getVideoUrl() -> String{ // format: https: //www.youtube.com/watch?v=[videoId]&ab_channel=[channelTitle]
+        return "www.youtube.com/watch?v=\( self.videoId )&ab_channel=\(self.channelTitle.replacingOccurrences(of: " ", with:"%20"))"
     }
-    */
-    func getThumbnails() -> [String : URL]{
-        return self.thumbnails
+    
+    func getThumbnail() -> String{
+        return self.thumbnail
     }
     
 }
