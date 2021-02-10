@@ -17,7 +17,7 @@ class AliceFirstViewController: UIViewController {
             businessTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
             businessTableView.separatorStyle = .none
             
-            retrieveBusinesses(latitude: Latitude, longitude: Longitude, term: "food",
+            YelpManager.shared.retrieveBusinesses(latitude: Latitude, longitude: Longitude, term: "food",
                            limit: 20, sortBy: "distance", locale: "en_US") { (response, error) in
                             
                             if let response = response {
