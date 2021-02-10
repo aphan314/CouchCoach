@@ -7,16 +7,60 @@
 //
 
 import UIKit
+import TTGTagCollectionView
+import FirebaseFirestore
+import FirebaseAuth
 
-class AndrewFirstViewController: UIViewController {
-
+class AndrewFirstViewController: UIViewController, TTGTextTagCollectionViewDelegate {
+    
+    
+    
+    @IBOutlet weak var TagTextField: UITextField!
+    let collectionView = TTGTextTagCollectionView()
+    let config = TTGTextTagConfig()
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.alignment = .center
+        collectionView.delegate = self
 
-        // Do any additional setup after loading the view.
+        TagTextField.text = ""
+        view.addSubview(collectionView)
+        
+        
+        config.backgroundColor = .systemBlue
+        config.textColor = .white
+        
+        
+        
+
     }
     
-
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+        collectionView.removeTag(at: index)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = CGRect(x: 0, y: 200, width: view.frame.size.width, height: 300)
+    }
+    
+    @IBAction func addTagButton(_ sender: Any) {
+        if TagTextField.text!.isEmpty {return}
+        let arr = [TagTextField.text!]
+        collectionView.addTags(arr, with: config)
+        TagTextField.text = ""
+    }
+    
+    
+    @IBAction func completeTagCollection(_ sender: Any) {
+        let db = Firestore.firestore()
+        let arr = collectionView.allTags()
+        db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["tags":arr as Any])
+         
+    }
+    
     /*
     // MARK: - Navigation
 
