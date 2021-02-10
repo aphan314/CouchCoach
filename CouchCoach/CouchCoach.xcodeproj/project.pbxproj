@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387875E725D45AB100AD0E21 /* YelpManager.swift */; };
 		38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860C25C0DE1F003C1369 /* AppDelegate.swift */; };
 		38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */; };
 		38DF861125C0DE1F003C1369 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF861025C0DE1F003C1369 /* ViewController.swift */; };
@@ -23,12 +24,19 @@
 		38DF866D25C38B06003C1369 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38DF866C25C38B06003C1369 /* GoogleService-Info.plist */; };
 		38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF866F25C38B8A003C1369 /* AuthViewController.swift */; };
 		38DF867325C9D944003C1369 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF867225C9D944003C1369 /* CalendarViewController.swift */; };
+		38DF868225CF195F003C1369 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF867E25CF195F003C1369 /* CustomCell.swift */; };
+		38DF868325CF195F003C1369 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF867F25CF195F003C1369 /* Business.swift */; };
+		38DF868725CF21CD003C1369 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868625CF21CD003C1369 /* AuthenticationManager.swift */; };
+		38DF868925CF6A1B003C1369 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DF868825CF6A1A003C1369 /* CustomCell.xib */; };
+		38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868B25CF6B4A003C1369 /* LocationManager.swift */; };
+		38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868D25CF72A4003C1369 /* CalendarManager.swift */; };
 		806B67A5CCE0DB4D5F6FEA38 /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264A41986DA4CE5537FF2591 /* Pods_CouchCoach.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E0684CE938BF3A927F491B3 /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
 		264A41986DA4CE5537FF2591 /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		387875E725D45AB100AD0E21 /* YelpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpManager.swift; sourceTree = "<group>"; };
 		38DF860925C0DE1F003C1369 /* CouchCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DF860C25C0DE1F003C1369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,12 @@
 		38DF866C25C38B06003C1369 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38DF866F25C38B8A003C1369 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		38DF867225C9D944003C1369 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		38DF867E25CF195F003C1369 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		38DF867F25CF195F003C1369 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		38DF868625CF21CD003C1369 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		38DF868825CF6A1A003C1369 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		38DF868B25CF6B4A003C1369 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		38DF868D25CF72A4003C1369 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		C6ECC8EE733007A86B275301 /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +106,7 @@
 		38DF860B25C0DE1F003C1369 /* CouchCoach */ = {
 			isa = PBXGroup;
 			children = (
+				38DF868A25CF6B2A003C1369 /* Manager */,
 				38DF866E25C38B76003C1369 /* Auth */,
 				38DF866C25C38B06003C1369 /* GoogleService-Info.plist */,
 				38DF866325C3834F003C1369 /* Andrew Testing */,
@@ -131,6 +146,9 @@
 		38DF866525C38366003C1369 /* Alice Testing */ = {
 			isa = PBXGroup;
 			children = (
+				38DF868825CF6A1A003C1369 /* CustomCell.xib */,
+				38DF867F25CF195F003C1369 /* Business.swift */,
+				38DF867E25CF195F003C1369 /* CustomCell.swift */,
 				38DF866125C38347003C1369 /* AliceTesting.storyboard */,
 				38DF866825C383F3003C1369 /* AliceFirstViewController.swift */,
 			);
@@ -151,6 +169,17 @@
 				38DF867225C9D944003C1369 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		38DF868A25CF6B2A003C1369 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				38DF868625CF21CD003C1369 /* AuthenticationManager.swift */,
+				38DF868B25CF6B4A003C1369 /* LocationManager.swift */,
+				38DF868D25CF72A4003C1369 /* CalendarManager.swift */,
+				387875E725D45AB100AD0E21 /* YelpManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		47D5084F882AD0AEE2559DD3 /* Frameworks */ = {
@@ -223,6 +252,7 @@
 			files = (
 				38DF861C25C0DE20003C1369 /* LaunchScreen.storyboard in Resources */,
 				38DF861925C0DE20003C1369 /* Assets.xcassets in Resources */,
+				38DF868925CF6A1B003C1369 /* CustomCell.xib in Resources */,
 				38DF866225C38347003C1369 /* AliceTesting.storyboard in Resources */,
 				38DF865E25C3831C003C1369 /* AndrewTesting.storyboard in Resources */,
 				38DF861425C0DE1F003C1369 /* Main.storyboard in Resources */,
@@ -281,12 +311,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DF866B25C3840F003C1369 /* MaliaFirstViewController.swift in Sources */,
+				387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */,
 				38DF866725C383B6003C1369 /* AndrewFirstViewController.swift in Sources */,
+				38DF868225CF195F003C1369 /* CustomCell.swift in Sources */,
 				38DF861125C0DE1F003C1369 /* ViewController.swift in Sources */,
 				38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */,
 				38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */,
+				38DF868725CF21CD003C1369 /* AuthenticationManager.swift in Sources */,
 				38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */,
+				38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */,
 				38DF867325C9D944003C1369 /* CalendarViewController.swift in Sources */,
+				38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */,
+				38DF868325CF195F003C1369 /* Business.swift in Sources */,
 				38DF866925C383F3003C1369 /* AliceFirstViewController.swift in Sources */,
 				38DF861725C0DE1F003C1369 /* CouchCoach.xcdatamodeld in Sources */,
 			);
