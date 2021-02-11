@@ -1,17 +1,17 @@
 import UIKit
+import Foundation
 
 class AliceFirstViewController: UIViewController {
 
         @IBOutlet weak var businessTableView: UITableView!
-        
-        let Latitude: Double = 33.6523
-        let Longitude: Double = -117.8341
+        let Latitude: Double = Double(LocationManager.shared.lastLocation?.coordinate.latitude ?? 0)
+        let Longitude: Double = Double(LocationManager.shared.lastLocation?.coordinate.longitude ?? 0)
         
         var businesses: [Business] = []
 
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+
             businessTableView.delegate = self
             businessTableView.dataSource = self
             businessTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
