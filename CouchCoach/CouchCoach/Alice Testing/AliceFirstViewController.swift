@@ -3,30 +3,16 @@ import Foundation
 
 class AliceFirstViewController: UIViewController {
 
-        @IBOutlet weak var businessTableView: UITableView!
-        let Latitude: Double = Double(LocationManager.shared.lastLocation?.coordinate.latitude ?? 0)
-        let Longitude: Double = Double(LocationManager.shared.lastLocation?.coordinate.longitude ?? 0)
-        
-        var businesses: [Business] = []
+    @IBOutlet weak var tagsSearchBar: UISearchBar!
+    @IBOutlet weak var tagsTableView: UITableView!
+
+        let tags = ["Archery", "Art", "Badminton", "Bartending", "Baseball", "Basketball", "Bicycle", "Bowling", "Boxing", "Climbing", "Cooking", "Cosmetology", "Crochet", "Dance", "Driving", "Fencing", "Fishing", "Golf", "Gymnastics", "Hiking", "Karate", "Kickboxing", "Knitting", "Meditation", "Music", "Nursing", "Photography", "Skating", "Soccer", "Swimming", "Taekwondo", "Tennis", "Tutoring", "Volleyball", "Yoga"]
+        var searchTag = [String]()
+        var searching = false
 
         override func viewDidLoad() {
             super.viewDidLoad()
 
-            businessTableView.delegate = self
-            businessTableView.dataSource = self
-            businessTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
-            businessTableView.separatorStyle = .none
-            
-            YelpManager.shared.retrieveBusinesses(latitude: Latitude, longitude: Longitude, term: "food",
-                           limit: 20, sortBy: "distance", locale: "en_US") { (response, error) in
-                            
-                            if let response = response {
-                                self.businesses = response
-                                DispatchQueue.main.async {
-                                    self.businessTableView.reloadData()
-                                }
-                            }
-            }
         }
 
     /*
@@ -44,22 +30,46 @@ class AliceFirstViewController: UIViewController {
 extension AliceFirstViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return businesses.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        if searching {
+            return searchTag.count
+        } else {
+            return tags.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-        
-        cell.nameLabel.text = businesses[indexPath.row].name
-        cell.ratingLabel.text = String(businesses[indexPath.row].rating ?? 0.0)
-        cell.priceLabel.text = businesses[indexPath.row].price ?? "-"
-        cell.isClosed = businesses[indexPath.row].is_closed ?? false
-        cell.addressLabel.text = businesses[indexPath.row].address
-        
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if searching {
+            cell?.textLabel?.text = searchTag[indexPath.row]
+        } else {
+            cell?.textLabel?.text = tags[indexPath.row]
+        }
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        let vc = storyboard?.instantiateViewController(identifier: "AliceSecondViewController") as? AliceSecondViewController
+        if searching {
+            vc?.term = searchTag[indexPath.row]
+        } else {
+            vc?.term = tags[indexPath.row]
+        }
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+}
+
+extension AliceFirstViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchTag = tags.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searching = true
+        tagsTableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tagsTableView.reloadData()
     }
 }
