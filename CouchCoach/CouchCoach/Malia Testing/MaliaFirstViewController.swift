@@ -8,56 +8,68 @@
 
 import UIKit
 
-class MaliaFirstViewController: UIViewController {
 
-    @IBOutlet weak var YTTableView: UITableView!
+class MaliaFirstViewController: UIViewController {
     
-    var videos : [Video] = []
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
+    var searchHobby = [String]()
+    var searching = false
+    let tags = ["baking", "crafting", "cooking", "dancing", "knitting", "painting", "singing", "whittling", "yoga"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        YTTableView.delegate = self
-        YTTableView.dataSource = self
-        YTTableView.register(UINib(nibName: "CustomYTCell", bundle: nil), forCellReuseIdentifier: "CustomYTCell")
-        YTTableView.separatorStyle = .none
-        
-        // Do any additional setup after loading the view.
-       retrieveSearchResults(q: "puppies", completionHandler: {(response, error) in
-            if let response = response{
-                self.videos = response
-                DispatchQueue.main.async{
-                    self.YTTableView.reloadData()
-                }
-            }
-        })
-        
+
     }
 }
 
-extension MaliaFirstViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return videos.count
-    }
+extension MaliaFirstViewController: UITableViewDelegate, UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 175
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        if searching{
+            return searchHobby.count
+        }
+        else{
+            return tags.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomYTCell", for: indexPath) as! YTTableViewCell
-        
-        cell.titleLabel.text = videos[indexPath.row].videoTitle
-        cell.channelLabel.text = videos[indexPath.row].channelTitle
-        cell.publishedLabel.text = videos[indexPath.row].published
-        cell.urlLabel.text = videos[indexPath.row].getVideoUrl()
-        
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if searching{
+            cell?.textLabel?.text = searchHobby[indexPath.row]
+        }else{
+            cell?.textLabel?.text = tags[indexPath.row]
+        }
+        return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "MaliasSecond") as? YTTableResults
+        if searching{
+            vc?.term = searchHobby[indexPath.row]
+        }
+        else{
+            vc?.term = tags[indexPath.row]
+        }
+        //print("sending term \(vc!.term)")
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }
 
+extension MaliaFirstViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar:UISearchBar, textDidChange searchText: String){
+        searchHobby = tags.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searching = true
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tableView.reloadData()
+    }
+}
     /*
     // MARK: - Navigation
 
@@ -67,5 +79,6 @@ extension MaliaFirstViewController: UITableViewDelegate, UITableViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 
