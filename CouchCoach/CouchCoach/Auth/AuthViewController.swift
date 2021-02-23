@@ -12,6 +12,11 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func done(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        
+    }
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text, !(isTextEmpty()) else {
             return
