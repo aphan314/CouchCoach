@@ -257,6 +257,7 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 2.30907.0)
+  - FSCalendar (2.8.2)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/YouTube (1.2.1):
@@ -323,13 +324,16 @@ PODS:
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
   - TTGTagCollectionView (1.11.1)
+  - YoutubePlayer-in-WKWebView (0.3.5)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
+  - FSCalendar
   - GoogleAPIClientForREST/YouTube (~> 1.2.1)
   - GoogleSignIn (~> 5.0)
   - TTGTagCollectionView
+  - YoutubePlayer-in-WKWebView (~> 0.3.0)
 
 SPEC REPOS:
   trunk:
@@ -341,6 +345,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
+    - FSCalendar
     - GoogleAPIClientForREST
     - GoogleDataTransport
     - GoogleSignIn
@@ -353,6 +358,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - TTGTagCollectionView
+    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -363,6 +369,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 06a2b68af8901f2244eb989419eb89edc3789b4d
   FirebaseCoreDiagnostics: 35685db68b11fe7d19d2d8b557fd7e3a56ac81cc
   FirebaseFirestore: 9a4c23e979412a8557992f4515314b38fc0c888b
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
@@ -375,7 +382,8 @@ SPEC CHECKSUMS:
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
+  YoutubePlayer-in-WKWebView: cfbf46da51d7370662a695a8f351e5fa1d3e1008
 
-PODFILE CHECKSUM: 8e93c018bac320dfa337147ee2a8c1d17af2b597
+PODFILE CHECKSUM: 35177047f3cc69590012741562ad53ee4c0f17a9
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.9.3

@@ -11,6 +11,10 @@
 		33DC7EC525E466E00051543D /* YTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC425E466E00051543D /* YTTableViewCell.swift */; };
 		33DC7EC825E466E60051543D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC725E466E60051543D /* Video.swift */; };
 		33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7ECC25E4675A0051543D /* AliceSecondViewController.swift */; };
+		3806D60725DD8CC90065EE36 /* CustomYTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3806D60325DD8CC90065EE36 /* CustomYTCell.xib */; };
+		3806D61325E03E6D0065EE36 /* HeaderEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */; };
+		3806D61525E1A5C40065EE36 /* HourlyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */; };
+		3806D61825E6BFB90065EE36 /* YTTableResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61725E6BFB80065EE36 /* YTTableResults.swift */; };
 		387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387875E725D45AB100AD0E21 /* YelpManager.swift */; };
 		38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860C25C0DE1F003C1369 /* AppDelegate.swift */; };
 		38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */; };
@@ -34,16 +38,19 @@
 		38DF868925CF6A1B003C1369 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DF868825CF6A1A003C1369 /* CustomCell.xib */; };
 		38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868B25CF6B4A003C1369 /* LocationManager.swift */; };
 		38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868D25CF72A4003C1369 /* CalendarManager.swift */; };
-		806B67A5CCE0DB4D5F6FEA38 /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264A41986DA4CE5537FF2591 /* Pods_CouchCoach.framework */; };
+		A81F179E9949C85C9125747A /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE00292EED9F198318693798 /* Pods_CouchCoach.framework */; };
+		B014FB69A3A80BE3B1D8A4A6 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E0684CE938BF3A927F491B3 /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
-		264A41986DA4CE5537FF2591 /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC7EC025E466670051543D /* ytSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytSearch.swift; sourceTree = "<group>"; };
 		33DC7EC425E466E00051543D /* YTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTableViewCell.swift; sourceTree = "<group>"; };
 		33DC7EC725E466E60051543D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		33DC7ECC25E4675A0051543D /* AliceSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliceSecondViewController.swift; sourceTree = "<group>"; };
+		3806D60325DD8CC90065EE36 /* CustomYTCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomYTCell.xib; sourceTree = "<group>"; };
+		3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderEventTableViewCell.swift; sourceTree = "<group>"; };
+		3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEventsTableViewCell.swift; sourceTree = "<group>"; };
+		3806D61725E6BFB80065EE36 /* YTTableResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTableResults.swift; sourceTree = "<group>"; };
 		387875E725D45AB100AD0E21 /* YelpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpManager.swift; sourceTree = "<group>"; };
 		38DF860925C0DE1F003C1369 /* CouchCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DF860C25C0DE1F003C1369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +76,9 @@
 		38DF868825CF6A1A003C1369 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		38DF868B25CF6B4A003C1369 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		38DF868D25CF72A4003C1369 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
-		C6ECC8EE733007A86B275301 /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
+		99BF72DB0FC34A86F601A9E3 /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
+		AFA894286AB129C56388BFAF /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
+		EE00292EED9F198318693798 /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806B67A5CCE0DB4D5F6FEA38 /* Pods_CouchCoach.framework in Frameworks */,
+				B014FB69A3A80BE3B1D8A4A6 /* (null) in Frameworks */,
+				A81F179E9949C85C9125747A /* Pods_CouchCoach.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +97,8 @@
 		18818DB3F73E29E50183BA3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0E0684CE938BF3A927F491B3 /* Pods-CouchCoach.debug.xcconfig */,
-				C6ECC8EE733007A86B275301 /* Pods-CouchCoach.release.xcconfig */,
+				AFA894286AB129C56388BFAF /* Pods-CouchCoach.debug.xcconfig */,
+				99BF72DB0FC34A86F601A9E3 /* Pods-CouchCoach.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -99,7 +109,7 @@
 				38DF860B25C0DE1F003C1369 /* CouchCoach */,
 				38DF860A25C0DE1F003C1369 /* Products */,
 				18818DB3F73E29E50183BA3B /* Pods */,
-				47D5084F882AD0AEE2559DD3 /* Frameworks */,
+				74911D64ACC163CCD0188112 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +155,8 @@
 		38DF866425C3835B003C1369 /* Malia Testing */ = {
 			isa = PBXGroup;
 			children = (
+				3806D61725E6BFB80065EE36 /* YTTableResults.swift */,
+				3806D60325DD8CC90065EE36 /* CustomYTCell.xib */,
 				38DF865F25C3833C003C1369 /* MaliaTesting.storyboard */,
 				33DC7EC025E466670051543D /* ytSearch.swift */,
 				33DC7EC425E466E00051543D /* YTTableViewCell.swift */,
@@ -179,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				38DF867225C9D944003C1369 /* CalendarViewController.swift */,
+				3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */,
+				3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -194,10 +208,10 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		47D5084F882AD0AEE2559DD3 /* Frameworks */ = {
+		74911D64ACC163CCD0188112 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				264A41986DA4CE5537FF2591 /* Pods_CouchCoach.framework */,
+				EE00292EED9F198318693798 /* Pods_CouchCoach.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,12 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38DF862025C0DE20003C1369 /* Build configuration list for PBXNativeTarget "CouchCoach" */;
 			buildPhases = (
-				66CB40A1EF9F26296CE1C502 /* [CP] Check Pods Manifest.lock */,
+				B83199BFC29176A9D1D379BD /* [CP] Check Pods Manifest.lock */,
 				38DF860525C0DE1F003C1369 /* Sources */,
 				38DF860625C0DE1F003C1369 /* Frameworks */,
 				38DF860725C0DE1F003C1369 /* Resources */,
-				C721A66D358167690BA4622D /* [CP] Embed Pods Frameworks */,
-				329C7C92FC9644719F69F053 /* [CP] Copy Pods Resources */,
+				BF4F204EC637D4B8D7EB3A20 /* [CP] Embed Pods Frameworks */,
+				AC00CF56A17040495A9A4CB9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +279,7 @@
 			files = (
 				38DF861C25C0DE20003C1369 /* LaunchScreen.storyboard in Resources */,
 				38DF861925C0DE20003C1369 /* Assets.xcassets in Resources */,
+				3806D60725DD8CC90065EE36 /* CustomYTCell.xib in Resources */,
 				38DF868925CF6A1B003C1369 /* CustomCell.xib in Resources */,
 				38DF866225C38347003C1369 /* AliceTesting.storyboard in Resources */,
 				38DF865E25C3831C003C1369 /* AndrewTesting.storyboard in Resources */,
@@ -277,7 +292,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		329C7C92FC9644719F69F053 /* [CP] Copy Pods Resources */ = {
+		AC00CF56A17040495A9A4CB9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,7 +309,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		66CB40A1EF9F26296CE1C502 /* [CP] Check Pods Manifest.lock */ = {
+		B83199BFC29176A9D1D379BD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,7 +331,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C721A66D358167690BA4622D /* [CP] Embed Pods Frameworks */ = {
+		BF4F204EC637D4B8D7EB3A20 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,6 +363,7 @@
 				33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */,
 				38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */,
 				38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */,
+				3806D61525E1A5C40065EE36 /* HourlyEventsTableViewCell.swift in Sources */,
 				38DF868725CF21CD003C1369 /* AuthenticationManager.swift in Sources */,
 				38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */,
 				38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */,
@@ -356,8 +372,10 @@
 				38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */,
 				33DC7EC825E466E60051543D /* Video.swift in Sources */,
 				33DC7EC125E466670051543D /* ytSearch.swift in Sources */,
+				3806D61325E03E6D0065EE36 /* HeaderEventTableViewCell.swift in Sources */,
 				38DF868325CF195F003C1369 /* Business.swift in Sources */,
 				38DF866925C383F3003C1369 /* AliceFirstViewController.swift in Sources */,
+				3806D61825E6BFB90065EE36 /* YTTableResults.swift in Sources */,
 				38DF861725C0DE1F003C1369 /* CouchCoach.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -488,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -500,7 +518,7 @@
 		};
 		38DF862125C0DE20003C1369 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E0684CE938BF3A927F491B3 /* Pods-CouchCoach.debug.xcconfig */;
+			baseConfigurationReference = AFA894286AB129C56388BFAF /* Pods-CouchCoach.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -519,7 +537,7 @@
 		};
 		38DF862225C0DE20003C1369 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6ECC8EE733007A86B275301 /* Pods-CouchCoach.release.xcconfig */;
+			baseConfigurationReference = 99BF72DB0FC34A86F601A9E3 /* Pods-CouchCoach.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
