@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33DC7EC125E466670051543D /* ytSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC025E466670051543D /* ytSearch.swift */; };
+		33DC7EC525E466E00051543D /* YTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC425E466E00051543D /* YTTableViewCell.swift */; };
+		33DC7EC825E466E60051543D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC725E466E60051543D /* Video.swift */; };
+		33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7ECC25E4675A0051543D /* AliceSecondViewController.swift */; };
 		387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387875E725D45AB100AD0E21 /* YelpManager.swift */; };
 		38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860C25C0DE1F003C1369 /* AppDelegate.swift */; };
 		38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */; };
@@ -36,6 +40,10 @@
 /* Begin PBXFileReference section */
 		0E0684CE938BF3A927F491B3 /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
 		264A41986DA4CE5537FF2591 /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33DC7EC025E466670051543D /* ytSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytSearch.swift; sourceTree = "<group>"; };
+		33DC7EC425E466E00051543D /* YTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTableViewCell.swift; sourceTree = "<group>"; };
+		33DC7EC725E466E60051543D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		33DC7ECC25E4675A0051543D /* AliceSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliceSecondViewController.swift; sourceTree = "<group>"; };
 		387875E725D45AB100AD0E21 /* YelpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpManager.swift; sourceTree = "<group>"; };
 		38DF860925C0DE1F003C1369 /* CouchCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DF860C25C0DE1F003C1369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				38DF865F25C3833C003C1369 /* MaliaTesting.storyboard */,
+				33DC7EC025E466670051543D /* ytSearch.swift */,
+				33DC7EC425E466E00051543D /* YTTableViewCell.swift */,
+				33DC7EC725E466E60051543D /* Video.swift */,
 				38DF866A25C3840F003C1369 /* MaliaFirstViewController.swift */,
 			);
 			path = "Malia Testing";
@@ -150,6 +161,7 @@
 				38DF867F25CF195F003C1369 /* Business.swift */,
 				38DF867E25CF195F003C1369 /* CustomCell.swift */,
 				38DF866125C38347003C1369 /* AliceTesting.storyboard */,
+				33DC7ECC25E4675A0051543D /* AliceSecondViewController.swift */,
 				38DF866825C383F3003C1369 /* AliceFirstViewController.swift */,
 			);
 			path = "Alice Testing";
@@ -202,6 +214,7 @@
 				38DF860625C0DE1F003C1369 /* Frameworks */,
 				38DF860725C0DE1F003C1369 /* Resources */,
 				C721A66D358167690BA4622D /* [CP] Embed Pods Frameworks */,
+				329C7C92FC9644719F69F053 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +277,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		329C7C92FC9644719F69F053 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		66CB40A1EF9F26296CE1C502 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,13 +345,17 @@
 				38DF866725C383B6003C1369 /* AndrewFirstViewController.swift in Sources */,
 				38DF868225CF195F003C1369 /* CustomCell.swift in Sources */,
 				38DF861125C0DE1F003C1369 /* ViewController.swift in Sources */,
+				33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */,
 				38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */,
 				38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */,
 				38DF868725CF21CD003C1369 /* AuthenticationManager.swift in Sources */,
 				38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */,
 				38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */,
+				33DC7EC525E466E00051543D /* YTTableViewCell.swift in Sources */,
 				38DF867325C9D944003C1369 /* CalendarViewController.swift in Sources */,
 				38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */,
+				33DC7EC825E466E60051543D /* Video.swift in Sources */,
+				33DC7EC125E466670051543D /* ytSearch.swift in Sources */,
 				38DF868325CF195F003C1369 /* Business.swift in Sources */,
 				38DF866925C383F3003C1369 /* AliceFirstViewController.swift in Sources */,
 				38DF861725C0DE1F003C1369 /* CouchCoach.xcdatamodeld in Sources */,
@@ -470,13 +504,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZN6BLT893;
+				DEVELOPMENT_TEAM = UR5T7FGHQ3;
 				INFOPLIST_FILE = CouchCoach/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gains.CouchCoach;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gains.CouchCoach316;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -489,13 +523,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZN6BLT893;
+				DEVELOPMENT_TEAM = UR5T7FGHQ3;
 				INFOPLIST_FILE = CouchCoach/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gains.CouchCoach;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gains.CouchCoach316;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
