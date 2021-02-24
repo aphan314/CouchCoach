@@ -8,21 +8,22 @@
 
 import Foundation
 
-extension MaliaFirstViewController {
+extension YTTableResults {
     
     func retrieveSearchResults(q: String, completionHandler: @escaping([Video]?, Error?) -> Void){
         
         // ["date","rating", "relevance", "title", "videoCount", "viewCount"]
         let order = "relevance"
+        let additional = ["%20tutorial","%20how%20to","%20guide","%20class","%20learn", "%20project", "%20teach","%20for%20beginners","%20project%20for%20beginners"]
         // ["moderate", "none", "strict"]
         let safeSearch = "moderate"
-        let maxResult = 5
+        let maxResult = 20
         
         // YouTube API Key:
-        let apiKey = ""
+        let apiKey =  ""
         
         // url
-        let baseURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=\(q)&order=\(order)&safeSearch=\(safeSearch)&maxResult=\(maxResult)&key=\(apiKey)"
+        let baseURL = "https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&q=\(q)\(additional.randomElement() ?? "")&order=\(order)&safeSearch=\(safeSearch)&maxResult=\(maxResult)&key=\(apiKey)"
         
         let url = URL(string : baseURL)
         
@@ -43,10 +44,11 @@ extension MaliaFirstViewController {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 // main dictionary
                 guard let resp = json as? NSDictionary else {return}
-                
+                print(resp)
+                print("sent")
                 // items
                 guard let items = resp.value(forKey: "items") as? NSArray else { return }
-                
+                //print(items)
                 var Videos: [Video] = []
                 var video: Video
                 // accessing each video
@@ -57,7 +59,10 @@ extension MaliaFirstViewController {
                     
                     // ID
                     let idStuff = itemInfo.value(forKey: "id") as! NSDictionary
-                    video.videoId = idStuff.value(forKey: "videoId") as! String
+                    if(idStuff.value(forKey: "kind") as! String == "youtube#video"){
+                        video.videoId = idStuff.value(forKey: "videoId") as! String
+                    }
+                    
                     
                     // Snippet
                     let snippetStuff = itemInfo.value(forKey: "snippet") as! NSDictionary
