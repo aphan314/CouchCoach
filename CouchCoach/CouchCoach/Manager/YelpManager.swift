@@ -42,10 +42,10 @@ class YelpManager {
                     business.rating = place.value(forKey: "rating") as? Float
                     business.price = place.value(forKey: "price") as? String
                     business.is_closed = place.value(forKey: "is_closed") as? Bool
-                    business.distance = place.value(forKey: "distance") as? Double
+                    business.distance = place.value(forKey: "distance") as? Float
                     let address = place.value(forKeyPath: "location.display_address") as? [String]
                     business.address = address?.joined(separator: "\n")
-
+                    business.image_url = place.value(forKey: "image_url") as? String
                     businessesList.append(business)
                 }
 

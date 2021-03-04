@@ -1,18 +1,31 @@
 import UIKit
 import Foundation
+import FirebaseFirestore
+import FirebaseAuth
+import TTGTagCollectionView
 
 class AliceFirstViewController: UIViewController {
 
     @IBOutlet weak var tagsSearchBar: UISearchBar!
     @IBOutlet weak var tagsTableView: UITableView!
 
-        let tags = ["Archery", "Art", "Badminton", "Bartending", "Baseball", "Basketball", "Bicycle", "Bowling", "Boxing", "Climbing", "Cooking", "Cosmetology", "Crochet", "Dance", "Driving", "Fencing", "Fishing", "Golf", "Gymnastics", "Hiking", "Karate", "Kickboxing", "Knitting", "Meditation", "Music", "Nursing", "Photography", "Skating", "Soccer", "Swimming", "Taekwondo", "Tennis", "Tutoring", "Volleyball", "Yoga"]
+        var tags = [String]()
         var searchTag = [String]()
         var searching = false
 
         override func viewDidLoad() {
             super.viewDidLoad()
-
+            let db = Firestore.firestore()
+            
+            let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let arr = document.data()?["tags"] ?? []
+                    self.tags = arr as! [String]
+                    self.tagsTableView.reloadData()
+                }
+            }
         }
 
     /*
@@ -48,7 +61,7 @@ extension AliceFirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+
         let vc = storyboard?.instantiateViewController(identifier: "AliceSecondViewController") as? AliceSecondViewController
         if searching {
             vc?.term = searchTag[indexPath.row]

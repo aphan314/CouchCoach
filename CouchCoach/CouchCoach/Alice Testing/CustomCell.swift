@@ -13,10 +13,11 @@ class CustomCell: UITableViewCell {
     
     @IBOutlet weak var parentView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var isClosedLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var businessImage: UIImageView!
     
     var isClosed: Bool = false {
         didSet {
@@ -27,6 +28,8 @@ class CustomCell: UITableViewCell {
             }
         }
     }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

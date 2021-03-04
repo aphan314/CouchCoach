@@ -6,6 +6,7 @@ struct Business {
     var rating                  : Float?
     var price                   : String?
     var is_closed               : Bool?
-    var distance                : Double?
+    var distance                : Float?
     var address                 : String?
+    var image_url               : String?
 }

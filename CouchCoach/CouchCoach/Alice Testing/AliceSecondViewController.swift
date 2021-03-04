@@ -51,15 +51,23 @@ extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource 
         return 200
     }
 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
 
         cell.nameLabel.text = businesses[indexPath.row].name
-        cell.ratingLabel.text = String(businesses[indexPath.row].rating ?? 0.0)
+        cell.addressLabel.text = businesses[indexPath.row].address
+        cell.ratingLabel.text = String(businesses[indexPath.row].rating ?? 0.0) + "/5.0 rating"
         cell.priceLabel.text = businesses[indexPath.row].price ?? "-"
         cell.isClosed = businesses[indexPath.row].is_closed ?? false
-        cell.addressLabel.text = businesses[indexPath.row].address
-
+//        cell.businessImage.image =
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = storyboard?.instantiateViewController(identifier: "AliceThirdViewController") as? AliceThirdViewController
+        vc?.id = businesses[indexPath.row].id ?? ""
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
