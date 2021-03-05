@@ -5,7 +5,7 @@
 //  Created by Alice Phan on 2/3/21.
 //  Copyright © 2021 GetFit. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class CustomCell: UITableViewCell {
@@ -14,8 +14,11 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var parentView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var websiteTextView: UITextView!
     @IBOutlet weak var isClosedLabel: UILabel!
     @IBOutlet weak var businessImage: UIImageView!
     
@@ -28,12 +31,11 @@ class CustomCell: UITableViewCell {
             }
         }
     }
-    
-    
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
                 
     }
 
 }
+

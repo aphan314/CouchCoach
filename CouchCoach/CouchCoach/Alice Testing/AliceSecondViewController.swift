@@ -48,7 +48,7 @@ extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 250
     }
 
     
@@ -57,17 +57,43 @@ extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource 
 
         cell.nameLabel.text = businesses[indexPath.row].name
         cell.addressLabel.text = businesses[indexPath.row].address
+        cell.phoneLabel.text = businesses[indexPath.row].display_phone ?? "Phone Number Not Available"
+        cell.categoriesLabel.text = businesses[indexPath.row].categories
         cell.ratingLabel.text = String(businesses[indexPath.row].rating ?? 0.0) + "/5.0 rating"
         cell.priceLabel.text = businesses[indexPath.row].price ?? "-"
+        let attributedString = NSMutableAttributedString(string: "Link to Website")
+        let link = businesses[indexPath.row].website
+        let url = URL(string: link ?? "")!
+
+        attributedString.setAttributes([.link: url], range: NSMakeRange(0, 15))
+        cell.websiteTextView.attributedText = attributedString
+    
         cell.isClosed = businesses[indexPath.row].is_closed ?? false
-//        cell.businessImage.image =
+        let image_url = businesses[indexPath.row].image_url ?? ""
+        cell.businessImage.loadImage(from: image_url)
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let vc = storyboard?.instantiateViewController(identifier: "AliceThirdViewController") as? AliceThirdViewController
-        vc?.id = businesses[indexPath.row].id ?? ""
-        self.navigationController?.pushViewController(vc!, animated: true)
+}
+
+extension UIImageView {
+    func loadImage(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { d, r, e in
+            guard
+                let httpResponse = r as? HTTPURLResponse, httpResponse.statusCode == 200,
+                let type = r?.mimeType, type.hasPrefix("image"),
+                let d = d, e == nil,
+                let img = UIImage(data: d)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = img
+            }
+        }.resume()
+    }
+    func loadImage(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        loadImage(from: url, contentMode: mode)
     }
 }
