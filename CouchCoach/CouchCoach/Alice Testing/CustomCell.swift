@@ -21,7 +21,11 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var websiteTextView: UITextView!
     @IBOutlet weak var isClosedLabel: UILabel!
     @IBOutlet weak var businessImage: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     
+    var cDelegate: cDelegate?
+    var index: IndexPath?
+
     var isClosed: Bool = false {
         didSet {
             if isClosed {
@@ -31,7 +35,11 @@ class CustomCell: UITableViewCell {
             }
         }
     }
-        
+
+    @IBAction func didClickSave(_ sender: UIButton) {
+        cDelegate?.didClickButton(index: (index?.row)!)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
                 
@@ -39,3 +47,7 @@ class CustomCell: UITableViewCell {
 
 }
 
+protocol cDelegate : class {
+    func didClickButton(index: Int)
+
+}

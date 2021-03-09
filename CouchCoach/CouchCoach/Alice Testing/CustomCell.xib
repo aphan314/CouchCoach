@@ -87,6 +87,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="didClickSave:" destination="63a-5q-Q98" eventType="touchUpInside" id="o5y-Cy-Ce9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -104,6 +107,7 @@
                 <outlet property="phoneLabel" destination="Wsr-1g-wkr" id="WXa-dF-kLY"/>
                 <outlet property="priceLabel" destination="M75-60-C3W" id="kR1-l5-1C4"/>
                 <outlet property="ratingLabel" destination="RqG-fk-fAo" id="GsT-IL-QsI"/>
+                <outlet property="saveButton" destination="V1s-Sh-DnS" id="ZwZ-Yj-S84"/>
                 <outlet property="websiteTextView" destination="M5h-4m-jkD" id="Tdc-HJ-ryG"/>
             </connections>
             <point key="canvasLocation" x="-239.13043478260872" y="12.723214285714285"/>

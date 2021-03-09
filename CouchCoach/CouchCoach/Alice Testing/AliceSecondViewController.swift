@@ -1,5 +1,8 @@
 import UIKit
 import Foundation
+import FirebaseFirestore
+import FirebaseAuth
+
 
 class AliceSecondViewController: UIViewController {
         @IBOutlet weak var businessTableView: UITableView!
@@ -9,7 +12,8 @@ class AliceSecondViewController: UIViewController {
 
         var businesses: [Business] = []
         var term = ""
-
+        var arr: [Int] = []
+        var dict_arr: [NSDictionary] = []
         override func viewDidLoad() {
             super.viewDidLoad()
             businessTableView.delegate = self
@@ -27,6 +31,15 @@ class AliceSecondViewController: UIViewController {
                                 }
                             }
             }
+            let db = Firestore.firestore()
+            
+            let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    self.dict_arr = document.data()?["yelp"] as! [NSDictionary]
+                }
+            }
         }
 
     /*
@@ -41,7 +54,30 @@ class AliceSecondViewController: UIViewController {
 
 }
 
-extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource {
+extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource, cDelegate {
+    func didClickButton(index: Int) {
+        let db = Firestore.firestore()
+        arr.append(index)
+        let uarr = Array(Set(arr))
+        var barr: [NSDictionary] = []
+        for ind in uarr {
+            let dictionary: NSDictionary = [
+                "id" : businesses[ind].id,
+                "name" : businesses[ind].name,
+                "address" : businesses[ind].address,
+                "display_phone" : businesses[ind].display_phone,
+                "categories" : businesses[ind].categories,
+                "rating" : businesses[ind].rating,
+                "price" : businesses[ind].price,
+                "is_closed" : businesses[ind].is_closed,
+                "website" : businesses[ind].website,
+                "image_url" : businesses[ind].image_url
+            ]
+            barr.append(dictionary)
+        }
+        let fin_arr = Array(Set(barr + self.dict_arr))
+        db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["yelp":fin_arr as! [NSDictionary]])
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return businesses.count
@@ -54,7 +90,8 @@ extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-
+        cell.cDelegate = self
+        cell.index = indexPath
         cell.nameLabel.text = businesses[indexPath.row].name
         cell.addressLabel.text = businesses[indexPath.row].address
         cell.phoneLabel.text = businesses[indexPath.row].display_phone ?? "Phone Number Not Available"
@@ -74,7 +111,6 @@ extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource 
 
         return cell
     }
-    
 }
 
 extension UIImageView {
@@ -97,3 +133,5 @@ extension UIImageView {
         loadImage(from: url, contentMode: mode)
     }
 }
+
+
