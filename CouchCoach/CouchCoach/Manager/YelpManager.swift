@@ -37,15 +37,24 @@ class YelpManager {
 
                 for place in places {
                     var business = Business()
-                    business.name = place.value(forKey: "name") as? String
                     business.id = place.value(forKey: "id") as? String
+                    business.name = place.value(forKey: "name") as? String
+                    let address = place.value(forKeyPath: "location.display_address") as? [String]
+                    business.address = address?.joined(separator: "\n")
+                    business.display_phone = place.value(forKey: "display_phone") as? String
+                    let categories = place.value(forKeyPath: "categories") as! [NSDictionary]
+                    var c = [String]()
+                    for item in categories {
+                        let obj = item as NSDictionary
+                        c.append(obj.value(forKey: "title") as! String)
+                    }
+                    business.categories = c.joined(separator: ", ")
                     business.rating = place.value(forKey: "rating") as? Float
                     business.price = place.value(forKey: "price") as? String
                     business.is_closed = place.value(forKey: "is_closed") as? Bool
-                    business.distance = place.value(forKey: "distance") as? Double
-                    let address = place.value(forKeyPath: "location.display_address") as? [String]
-                    business.address = address?.joined(separator: "\n")
-
+                    business.website = place.value(forKey: "url") as? String
+                    business.distance = place.value(forKey: "distance") as? Float
+                    business.image_url = place.value(forKey: "image_url") as? String
                     businessesList.append(business)
                 }
 
