@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		339A1BC325F80E0B008E7316 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BC225F80E0B008E7316 /* WeatherManager.swift */; };
+		339A1BE025F82C14008E7316 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BDF25F82C14008E7316 /* CurrentWeather.swift */; };
 		33DC7EC125E466670051543D /* ytSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC025E466670051543D /* ytSearch.swift */; };
 		33DC7EC525E466E00051543D /* YTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC425E466E00051543D /* YTTableViewCell.swift */; };
 		33DC7EC825E466E60051543D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC725E466E60051543D /* Video.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		339A1BC225F80E0B008E7316 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		339A1BDF25F82C14008E7316 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		33DC7EC025E466670051543D /* ytSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytSearch.swift; sourceTree = "<group>"; };
 		33DC7EC425E466E00051543D /* YTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTableViewCell.swift; sourceTree = "<group>"; };
 		33DC7EC725E466E60051543D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -103,6 +107,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		339A1BDE25F82BF6008E7316 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				339A1BDF25F82C14008E7316 /* CurrentWeather.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		38DF860025C0DE1F003C1369 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +136,7 @@
 		38DF860B25C0DE1F003C1369 /* CouchCoach */ = {
 			isa = PBXGroup;
 			children = (
+				339A1BDE25F82BF6008E7316 /* Weather */,
 				38DF868A25CF6B2A003C1369 /* Manager */,
 				38DF866E25C38B76003C1369 /* Auth */,
 				38DF866C25C38B06003C1369 /* GoogleService-Info.plist */,
@@ -202,6 +215,7 @@
 			children = (
 				38DF868625CF21CD003C1369 /* AuthenticationManager.swift */,
 				38DF868B25CF6B4A003C1369 /* LocationManager.swift */,
+				339A1BC225F80E0B008E7316 /* WeatherManager.swift */,
 				38DF868D25CF72A4003C1369 /* CalendarManager.swift */,
 				387875E725D45AB100AD0E21 /* YelpManager.swift */,
 			);
@@ -358,12 +372,14 @@
 				38DF866B25C3840F003C1369 /* MaliaFirstViewController.swift in Sources */,
 				387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */,
 				38DF866725C383B6003C1369 /* AndrewFirstViewController.swift in Sources */,
+				339A1BC325F80E0B008E7316 /* WeatherManager.swift in Sources */,
 				38DF868225CF195F003C1369 /* CustomCell.swift in Sources */,
 				38DF861125C0DE1F003C1369 /* ViewController.swift in Sources */,
 				33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */,
 				38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */,
 				38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */,
 				3806D61525E1A5C40065EE36 /* HourlyEventsTableViewCell.swift in Sources */,
+				339A1BE025F82C14008E7316 /* CurrentWeather.swift in Sources */,
 				38DF868725CF21CD003C1369 /* AuthenticationManager.swift in Sources */,
 				38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */,
 				38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */,
