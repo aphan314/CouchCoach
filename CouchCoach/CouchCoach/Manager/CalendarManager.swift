@@ -52,11 +52,16 @@ class CalendarManager {
         let calendars = eventStore.calendars(for: .event)
         var totalEvents = [EKEvent]()
         for calendar in calendars {
-            let today = NSDate(timeIntervalSinceNow: 0)
-            let oneWeekAfter = NSDate(timeIntervalSinceNow: +7*24*3600)
-            let predicate = eventStore.predicateForEvents(withStart: today as Date, end: oneWeekAfter as Date, calendars: [calendar])
+            if calendar.title != "US Holidays" {
+                let today = NSDate(timeIntervalSinceNow: 0)
+                let morning = Calendar(identifier: .gregorian).startOfDay(for: today as Date)
+                let midnight = NSDate(timeInterval: +1*24*3600, since: morning)
+                //let oneWeekAfter = NSDate(timeIntervalSinceNow: +7*24*3600)
+                let predicate = eventStore.predicateForEvents(withStart: today as Date, end: midnight as Date, calendars: [calendar])
 
-            totalEvents.append(contentsOf: eventStore.events(matching: predicate))
+                    totalEvents.append(contentsOf: eventStore.events(matching: predicate))
+
+            }
         }
         return totalEvents
     }
