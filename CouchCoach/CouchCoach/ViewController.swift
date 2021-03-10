@@ -3,28 +3,20 @@ import Firebase
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+
     let logoutSegueIdentifier = "logoutSegue"
-    
-    @IBOutlet weak var locationLabel: UILabel!
-    
+    let upcomingEventCellIdentifier = "UpcomingEventsTableViewCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         LocationManager.shared.startUpdatingLocation()
-        getUserLocation()
-        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        getUserLocation()
-    }
-
-    func getUserLocation() {
-        guard let location = LocationManager.shared.lastLocation else { return }
-        
-        locationLabel.text = "Lat : \(location.coordinate.latitude) \nLng : \(location.coordinate.longitude)"
-    }
-    
-    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+    @IBAction func logoutButtonPressed(_ sender: Any) {
         AuthenticationManager.shared.logout { result in
             switch result {
             case true:
@@ -45,4 +37,32 @@ class ViewController: UIViewController {
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
+}
+
+//MARK: - UITableViewDataSource
+extension ViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CalendarManager.shared.events.count
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Today"
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: upcomingEventCellIdentifier) as? HourlyEventsTableViewCell {
+            cell.configureWith(event: CalendarManager.shared.events[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension ViewController: UITableViewDelegate {
+
 }

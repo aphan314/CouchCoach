@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13544AD7782C9AD0C2A4A0FD /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E96E6474B5B03EF2C70351 /* Pods_CouchCoach.framework */; };
 		339A1BC325F80E0B008E7316 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BC225F80E0B008E7316 /* WeatherManager.swift */; };
 		339A1BE025F82C14008E7316 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BDF25F82C14008E7316 /* CurrentWeather.swift */; };
 		33DC7EC125E466670051543D /* ytSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC025E466670051543D /* ytSearch.swift */; };
@@ -17,6 +18,9 @@
 		3806D61325E03E6D0065EE36 /* HeaderEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */; };
 		3806D61525E1A5C40065EE36 /* HourlyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */; };
 		3806D61825E6BFB90065EE36 /* YTTableResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61725E6BFB80065EE36 /* YTTableResults.swift */; };
+		3806D61B25F6F4A50065EE36 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61A25F6F4A50065EE36 /* DateExtensions.swift */; };
+		3806D61E25F844B70065EE36 /* Recommendation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3806D61D25F844B70065EE36 /* Recommendation.storyboard */; };
+		3806D62025F8458A0065EE36 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61F25F8458A0065EE36 /* RecommendationViewController.swift */; };
 		387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387875E725D45AB100AD0E21 /* YelpManager.swift */; };
 		38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860C25C0DE1F003C1369 /* AppDelegate.swift */; };
 		38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */; };
@@ -40,11 +44,10 @@
 		38DF868925CF6A1B003C1369 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DF868825CF6A1A003C1369 /* CustomCell.xib */; };
 		38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868B25CF6B4A003C1369 /* LocationManager.swift */; };
 		38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868D25CF72A4003C1369 /* CalendarManager.swift */; };
-		A81F179E9949C85C9125747A /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE00292EED9F198318693798 /* Pods_CouchCoach.framework */; };
-		B014FB69A3A80BE3B1D8A4A6 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02500508B03044377D68D52D /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
 		339A1BC225F80E0B008E7316 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		339A1BDF25F82C14008E7316 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		33DC7EC025E466670051543D /* ytSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytSearch.swift; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderEventTableViewCell.swift; sourceTree = "<group>"; };
 		3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEventsTableViewCell.swift; sourceTree = "<group>"; };
 		3806D61725E6BFB80065EE36 /* YTTableResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTableResults.swift; sourceTree = "<group>"; };
+		3806D61A25F6F4A50065EE36 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		3806D61D25F844B70065EE36 /* Recommendation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommendation.storyboard; sourceTree = "<group>"; };
+		3806D61F25F8458A0065EE36 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		387875E725D45AB100AD0E21 /* YelpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpManager.swift; sourceTree = "<group>"; };
 		38DF860925C0DE1F003C1369 /* CouchCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DF860C25C0DE1F003C1369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,9 +86,8 @@
 		38DF868825CF6A1A003C1369 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		38DF868B25CF6B4A003C1369 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		38DF868D25CF72A4003C1369 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
-		99BF72DB0FC34A86F601A9E3 /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
-		AFA894286AB129C56388BFAF /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
-		EE00292EED9F198318693798 /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E96E6474B5B03EF2C70351 /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		935EC4A7DC6124DDE10C48EA /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B014FB69A3A80BE3B1D8A4A6 /* (null) in Frameworks */,
-				A81F179E9949C85C9125747A /* Pods_CouchCoach.framework in Frameworks */,
+				13544AD7782C9AD0C2A4A0FD /* Pods_CouchCoach.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +105,8 @@
 		18818DB3F73E29E50183BA3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AFA894286AB129C56388BFAF /* Pods-CouchCoach.debug.xcconfig */,
-				99BF72DB0FC34A86F601A9E3 /* Pods-CouchCoach.release.xcconfig */,
+				935EC4A7DC6124DDE10C48EA /* Pods-CouchCoach.debug.xcconfig */,
+				02500508B03044377D68D52D /* Pods-CouchCoach.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -115,13 +119,30 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		3806D61925F6F4940065EE36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3806D61A25F6F4A50065EE36 /* DateExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3806D61C25F843AB0065EE36 /* Recommendation */ = {
+			isa = PBXGroup;
+			children = (
+				3806D61D25F844B70065EE36 /* Recommendation.storyboard */,
+				3806D61F25F8458A0065EE36 /* RecommendationViewController.swift */,
+			);
+			path = Recommendation;
+			sourceTree = "<group>";
+		};
 		38DF860025C0DE1F003C1369 = {
 			isa = PBXGroup;
 			children = (
 				38DF860B25C0DE1F003C1369 /* CouchCoach */,
 				38DF860A25C0DE1F003C1369 /* Products */,
 				18818DB3F73E29E50183BA3B /* Pods */,
-				74911D64ACC163CCD0188112 /* Frameworks */,
+				B2869F230F6597A26FB8CEA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +157,7 @@
 		38DF860B25C0DE1F003C1369 /* CouchCoach */ = {
 			isa = PBXGroup;
 			children = (
+				3806D61925F6F4940065EE36 /* Extensions */,
 				339A1BDE25F82BF6008E7316 /* Weather */,
 				38DF868A25CF6B2A003C1369 /* Manager */,
 				38DF866E25C38B76003C1369 /* Auth */,
@@ -147,6 +169,7 @@
 				38DF866425C3835B003C1369 /* Malia Testing */,
 				38DF867125C9D91E003C1369 /* Calendar */,
 				38DF861025C0DE1F003C1369 /* ViewController.swift */,
+				3806D61C25F843AB0065EE36 /* Recommendation */,
 				38DF861225C0DE1F003C1369 /* Main.storyboard */,
 				38DF861825C0DE20003C1369 /* Assets.xcassets */,
 				38DF861A25C0DE20003C1369 /* LaunchScreen.storyboard */,
@@ -222,10 +245,10 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		74911D64ACC163CCD0188112 /* Frameworks */ = {
+		B2869F230F6597A26FB8CEA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE00292EED9F198318693798 /* Pods_CouchCoach.framework */,
+				81E96E6474B5B03EF2C70351 /* Pods_CouchCoach.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,12 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38DF862025C0DE20003C1369 /* Build configuration list for PBXNativeTarget "CouchCoach" */;
 			buildPhases = (
-				B83199BFC29176A9D1D379BD /* [CP] Check Pods Manifest.lock */,
+				3361D68454C27E46918C8C33 /* [CP] Check Pods Manifest.lock */,
 				38DF860525C0DE1F003C1369 /* Sources */,
 				38DF860625C0DE1F003C1369 /* Frameworks */,
 				38DF860725C0DE1F003C1369 /* Resources */,
-				BF4F204EC637D4B8D7EB3A20 /* [CP] Embed Pods Frameworks */,
-				AC00CF56A17040495A9A4CB9 /* [CP] Copy Pods Resources */,
+				59DE144AF670B080AF54B7DA /* [CP] Embed Pods Frameworks */,
+				07770FCFEBBDACA42ACA59FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38DF861C25C0DE20003C1369 /* LaunchScreen.storyboard in Resources */,
+				3806D61E25F844B70065EE36 /* Recommendation.storyboard in Resources */,
 				38DF861925C0DE20003C1369 /* Assets.xcassets in Resources */,
 				3806D60725DD8CC90065EE36 /* CustomYTCell.xib in Resources */,
 				38DF868925CF6A1B003C1369 /* CustomCell.xib in Resources */,
@@ -306,7 +330,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AC00CF56A17040495A9A4CB9 /* [CP] Copy Pods Resources */ = {
+		07770FCFEBBDACA42ACA59FB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,7 +347,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B83199BFC29176A9D1D379BD /* [CP] Check Pods Manifest.lock */ = {
+		3361D68454C27E46918C8C33 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -345,7 +369,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF4F204EC637D4B8D7EB3A20 /* [CP] Embed Pods Frameworks */ = {
+		59DE144AF670B080AF54B7DA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3806D61B25F6F4A50065EE36 /* DateExtensions.swift in Sources */,
 				38DF866B25C3840F003C1369 /* MaliaFirstViewController.swift in Sources */,
 				387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */,
 				38DF866725C383B6003C1369 /* AndrewFirstViewController.swift in Sources */,
@@ -391,6 +416,7 @@
 				3806D61325E03E6D0065EE36 /* HeaderEventTableViewCell.swift in Sources */,
 				38DF868325CF195F003C1369 /* Business.swift in Sources */,
 				38DF866925C383F3003C1369 /* AliceFirstViewController.swift in Sources */,
+				3806D62025F8458A0065EE36 /* RecommendationViewController.swift in Sources */,
 				3806D61825E6BFB90065EE36 /* YTTableResults.swift in Sources */,
 				38DF861725C0DE1F003C1369 /* CouchCoach.xcdatamodeld in Sources */,
 			);
@@ -534,7 +560,7 @@
 		};
 		38DF862125C0DE20003C1369 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFA894286AB129C56388BFAF /* Pods-CouchCoach.debug.xcconfig */;
+			baseConfigurationReference = 935EC4A7DC6124DDE10C48EA /* Pods-CouchCoach.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,7 +579,7 @@
 		};
 		38DF862225C0DE20003C1369 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99BF72DB0FC34A86F601A9E3 /* Pods-CouchCoach.release.xcconfig */;
+			baseConfigurationReference = 02500508B03044377D68D52D /* Pods-CouchCoach.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -118,44 +118,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="L7O-pf-vDW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o5N-Tv-SEs">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzH-36-hLT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="184.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNh-sn-87f">
-                                        <rect key="frame" x="0.0" y="184.5" width="414" height="270.5"/>
-                                        <state key="normal" title="View Calendar"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcomingEventsTableViewCell" rowHeight="163" id="pgo-GX-ruY" customClass="HourlyEventsTableViewCell" customModule="CouchCoach" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="163"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pgo-GX-ruY" id="iDV-CF-qys">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="163"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-Fm-mfK">
+                                                    <rect key="frame" x="16" y="8" width="382" height="102.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="OFm-Wl-8VG">
+                                                    <rect key="frame" x="16" y="126.5" width="382" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXl-8N-5xO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ba-UH-jA2">
+                                                            <rect key="frame" x="340" y="0.0" width="42" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OFm-Wl-8VG" firstAttribute="top" secondItem="BH9-Fm-mfK" secondAttribute="bottom" constant="16" id="1P8-jb-v4v"/>
+                                                <constraint firstAttribute="bottom" secondItem="OFm-Wl-8VG" secondAttribute="bottom" constant="16" id="2TU-CJ-EIr"/>
+                                                <constraint firstItem="BH9-Fm-mfK" firstAttribute="top" secondItem="iDV-CF-qys" secondAttribute="top" constant="8" id="3cW-Wu-jmB"/>
+                                                <constraint firstItem="OFm-Wl-8VG" firstAttribute="leading" secondItem="iDV-CF-qys" secondAttribute="leading" constant="16" id="QLq-et-Qvg"/>
+                                                <constraint firstItem="BH9-Fm-mfK" firstAttribute="leading" secondItem="iDV-CF-qys" secondAttribute="leading" constant="16" id="aSQ-S2-l24"/>
+                                                <constraint firstAttribute="trailing" secondItem="OFm-Wl-8VG" secondAttribute="trailing" constant="16" id="ags-k5-gcF"/>
+                                                <constraint firstAttribute="trailing" secondItem="BH9-Fm-mfK" secondAttribute="trailing" constant="16" id="lzS-xD-cBC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Mb1-fD-Bsr" kind="show" id="wzo-lq-oo7"/>
+                                            <outlet property="endLabel" destination="1Ba-UH-jA2" id="ghS-XM-Mp5"/>
+                                            <outlet property="nameLabel" destination="BH9-Fm-mfK" id="KMC-wo-Lz8"/>
+                                            <outlet property="startLabel" destination="sXl-8N-5xO" id="ycS-SL-C4P"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAH-dT-FAx">
-                                        <rect key="frame" x="0.0" y="455" width="414" height="270"/>
-                                        <state key="normal" title="Logout"/>
-                                        <connections>
-                                            <action selector="logoutButtonPressed:" destination="CUD-O8-5kX" eventType="touchUpInside" id="RzE-Q1-vkL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="L7O-pf-vDW" firstAttribute="leading" secondItem="gGA-fP-3XA" secondAttribute="leading" id="3Pv-EX-4Ij"/>
-                            <constraint firstItem="gGA-fP-3XA" firstAttribute="trailing" secondItem="L7O-pf-vDW" secondAttribute="trailing" id="7pN-BZ-UxJ"/>
-                            <constraint firstItem="gGA-fP-3XA" firstAttribute="bottom" secondItem="L7O-pf-vDW" secondAttribute="bottom" id="Sks-4F-bqz"/>
-                            <constraint firstItem="L7O-pf-vDW" firstAttribute="top" secondItem="gGA-fP-3XA" secondAttribute="top" id="TBT-zt-C4E"/>
+                            <constraint firstItem="gGA-fP-3XA" firstAttribute="bottom" secondItem="o5N-Tv-SEs" secondAttribute="bottom" id="Wi4-Ec-Wb0"/>
+                            <constraint firstItem="o5N-Tv-SEs" firstAttribute="leading" secondItem="gGA-fP-3XA" secondAttribute="leading" id="ZP2-0V-x3s"/>
+                            <constraint firstItem="o5N-Tv-SEs" firstAttribute="top" secondItem="gGA-fP-3XA" secondAttribute="top" id="dkP-GA-oiw"/>
+                            <constraint firstItem="gGA-fP-3XA" firstAttribute="trailing" secondItem="o5N-Tv-SEs" secondAttribute="trailing" id="vKz-ri-hzk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gGA-fP-3XA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3W4-Lz-KyK"/>
+                    <navigationItem key="navigationItem" id="3W4-Lz-KyK">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="2pU-Hj-pud">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="CUD-O8-5kX" id="qOZ-6U-B1e"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="calendar" catalog="system" id="EFb-1i-oOr">
+                            <connections>
+                                <segue destination="Mb1-fD-Bsr" kind="show" id="pou-y1-VhU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="locationLabel" destination="YzH-36-hLT" id="SPz-4x-hI6"/>
+                        <outlet property="tableView" destination="o5N-Tv-SEs" id="lXS-b7-JoQ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="I0W-eH-nb9"/>
                     </connections>
                 </viewController>
@@ -300,11 +339,22 @@
                         <segue destination="B5c-aH-3xo" kind="relationship" relationship="viewControllers" id="dhT-AN-AGB"/>
                         <segue destination="pXu-iD-3r2" kind="relationship" relationship="viewControllers" id="h28-r6-HK1"/>
                         <segue destination="LhK-dO-gqw" kind="relationship" relationship="viewControllers" id="GTq-mg-pRs"/>
+                        <segue destination="l0W-aO-U7h" kind="relationship" relationship="viewControllers" id="aKa-bY-MIn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRP-EA-tfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1217" y="119"/>
+        </scene>
+        <!--Recommendation-->
+        <scene sceneID="lTM-Li-BW6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Recommendation" id="l0W-aO-U7h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vQG-Cx-Vjl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJf-s9-mB6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="471"/>
         </scene>
         <!--AndrewTesting-->
         <scene sceneID="SXz-YV-qcS">
@@ -357,6 +407,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
