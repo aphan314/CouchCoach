@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import FirebaseFirestore // to access user tags
+import FirebaseAuth //**
+import TTGTagCollectionView //**
 
 class MaliaFirstViewController: UIViewController {
     
@@ -16,10 +18,26 @@ class MaliaFirstViewController: UIViewController {
     
     var searchHobby = [String]()
     var searching = false
-    let tags = ["baking", "crafting", "cooking", "dancing", "knitting", "painting", "singing", "whittling", "yoga"]
+    var tags = [String]() //**
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //** add starting here
+        let db = Firestore.firestore()
 
+        let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let arr = document.data()?["tags"] ?? []
+                print(arr)
+                self.tags = arr as! [String]
+                print(self.tags)
+                //self.collectionView.addTags(arr as? [String], with:self.config)
+                self.tableView.reloadData()
+            }
+        }
+        //** to here
     }
 }
 

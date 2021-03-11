@@ -17,7 +17,7 @@ extension YTTableResults {
         let additional = ["%20tutorial","%20how%20to","%20guide","%20class","%20learn", "%20project", "%20teach","%20for%20beginners","%20project%20for%20beginners"]
         // ["moderate", "none", "strict"]
         let safeSearch = "moderate"
-        let maxResult = 20
+        let maxResult = 25
         
         // YouTube API Key:
         let apiKey =  ""
@@ -44,8 +44,8 @@ extension YTTableResults {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 // main dictionary
                 guard let resp = json as? NSDictionary else {return}
-                print(resp)
-                print("sent")
+                //print(resp)
+                //print("sent")
                 // items
                 guard let items = resp.value(forKey: "items") as? NSArray else { return }
                 //print(items)

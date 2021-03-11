@@ -40,6 +40,7 @@ class YTTableViewCell: UITableViewCell {
     }
     
 }
+
 // button pressed protocol
 protocol cellDelegate : class {
     func didPressButton(_ sender: YTTableViewCell, butt: UIButton, value: Int)
