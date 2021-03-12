@@ -150,6 +150,6 @@ extension CalendarViewController: CalendarHourlyEventsDelegate {
 
 extension CalendarViewController: CalendarDoSomethingDelegate {
     func navigateToExplore() {
-        tabBarController?.selectedIndex = 4
+        tabBarController?.selectedIndex = 3
     }
 }
