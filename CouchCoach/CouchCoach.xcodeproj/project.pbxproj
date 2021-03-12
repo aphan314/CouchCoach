@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13544AD7782C9AD0C2A4A0FD /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E96E6474B5B03EF2C70351 /* Pods_CouchCoach.framework */; };
 		339A1BC325F80E0B008E7316 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BC225F80E0B008E7316 /* WeatherManager.swift */; };
 		339A1BE025F82C14008E7316 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BDF25F82C14008E7316 /* CurrentWeather.swift */; };
 		33DC7EC125E466670051543D /* ytSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC025E466670051543D /* ytSearch.swift */; };
@@ -15,16 +14,21 @@
 		33DC7EC825E466E60051543D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC725E466E60051543D /* Video.swift */; };
 		33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7ECC25E4675A0051543D /* AliceSecondViewController.swift */; };
 		3806D60725DD8CC90065EE36 /* CustomYTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3806D60325DD8CC90065EE36 /* CustomYTCell.xib */; };
-		3806D61325E03E6D0065EE36 /* HeaderEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */; };
-		3806D61525E1A5C40065EE36 /* HourlyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */; };
 		3806D61825E6BFB90065EE36 /* YTTableResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61725E6BFB80065EE36 /* YTTableResults.swift */; };
 		3806D61B25F6F4A50065EE36 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61A25F6F4A50065EE36 /* DateExtensions.swift */; };
 		3806D61E25F844B70065EE36 /* Recommendation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3806D61D25F844B70065EE36 /* Recommendation.storyboard */; };
 		3806D62025F8458A0065EE36 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D61F25F8458A0065EE36 /* RecommendationViewController.swift */; };
+		3806D62825FB44180065EE36 /* HeaderEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D62525FB44180065EE36 /* HeaderEventTableViewCell.swift */; };
+		3806D62925FB44180065EE36 /* HourlyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D62625FB44180065EE36 /* HourlyEventsTableViewCell.swift */; };
+		3806D62A25FB44180065EE36 /* DoSomethingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D62725FB44180065EE36 /* DoSomethingTableViewCell.swift */; };
+		3806D62F25FB45A30065EE36 /* RecCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D62C25FB45A30065EE36 /* RecCell.swift */; };
+		3806D63025FB45A30065EE36 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D62D25FB45A30065EE36 /* Recommendation.swift */; };
+		3806D63325FB68320065EE36 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D63225FB68320065EE36 /* DatabaseManager.swift */; };
+		3806D63625FBD3C10065EE36 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806D63525FBD3C10065EE36 /* FeedTableViewCell.swift */; };
 		387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387875E725D45AB100AD0E21 /* YelpManager.swift */; };
 		38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860C25C0DE1F003C1369 /* AppDelegate.swift */; };
 		38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */; };
-		38DF861125C0DE1F003C1369 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF861025C0DE1F003C1369 /* ViewController.swift */; };
+		38DF861125C0DE1F003C1369 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF861025C0DE1F003C1369 /* FeedViewController.swift */; };
 		38DF861425C0DE1F003C1369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DF861225C0DE1F003C1369 /* Main.storyboard */; };
 		38DF861725C0DE1F003C1369 /* CouchCoach.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38DF861525C0DE1F003C1369 /* CouchCoach.xcdatamodeld */; };
 		38DF861925C0DE20003C1369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38DF861825C0DE20003C1369 /* Assets.xcassets */; };
@@ -44,10 +48,11 @@
 		38DF868925CF6A1B003C1369 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DF868825CF6A1A003C1369 /* CustomCell.xib */; };
 		38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868B25CF6B4A003C1369 /* LocationManager.swift */; };
 		38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF868D25CF72A4003C1369 /* CalendarManager.swift */; };
+		C50CD494F2886833BA5B5B57 /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0654EC6B8CA880FB3C29871D /* Pods_CouchCoach.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02500508B03044377D68D52D /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
+		0654EC6B8CA880FB3C29871D /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		339A1BC225F80E0B008E7316 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		339A1BDF25F82C14008E7316 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		33DC7EC025E466670051543D /* ytSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytSearch.swift; sourceTree = "<group>"; };
@@ -55,17 +60,22 @@
 		33DC7EC725E466E60051543D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		33DC7ECC25E4675A0051543D /* AliceSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliceSecondViewController.swift; sourceTree = "<group>"; };
 		3806D60325DD8CC90065EE36 /* CustomYTCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomYTCell.xib; sourceTree = "<group>"; };
-		3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderEventTableViewCell.swift; sourceTree = "<group>"; };
-		3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEventsTableViewCell.swift; sourceTree = "<group>"; };
 		3806D61725E6BFB80065EE36 /* YTTableResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTableResults.swift; sourceTree = "<group>"; };
 		3806D61A25F6F4A50065EE36 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		3806D61D25F844B70065EE36 /* Recommendation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommendation.storyboard; sourceTree = "<group>"; };
 		3806D61F25F8458A0065EE36 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
+		3806D62525FB44180065EE36 /* HeaderEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderEventTableViewCell.swift; sourceTree = "<group>"; };
+		3806D62625FB44180065EE36 /* HourlyEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyEventsTableViewCell.swift; sourceTree = "<group>"; };
+		3806D62725FB44180065EE36 /* DoSomethingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoSomethingTableViewCell.swift; sourceTree = "<group>"; };
+		3806D62C25FB45A30065EE36 /* RecCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecCell.swift; sourceTree = "<group>"; };
+		3806D62D25FB45A30065EE36 /* Recommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		3806D63225FB68320065EE36 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		3806D63525FBD3C10065EE36 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		387875E725D45AB100AD0E21 /* YelpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpManager.swift; sourceTree = "<group>"; };
 		38DF860925C0DE1F003C1369 /* CouchCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DF860C25C0DE1F003C1369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38DF860E25C0DE1F003C1369 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		38DF861025C0DE1F003C1369 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38DF861025C0DE1F003C1369 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		38DF861325C0DE1F003C1369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38DF861625C0DE1F003C1369 /* CouchCoach.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CouchCoach.xcdatamodel; sourceTree = "<group>"; };
 		38DF861825C0DE20003C1369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,8 +96,8 @@
 		38DF868825CF6A1A003C1369 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		38DF868B25CF6B4A003C1369 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		38DF868D25CF72A4003C1369 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
-		81E96E6474B5B03EF2C70351 /* Pods_CouchCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		935EC4A7DC6124DDE10C48EA /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
+		81512E027FF1963902135A2D /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
+		8B4E49D80962EC0504B9876A /* Pods-CouchCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.debug.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13544AD7782C9AD0C2A4A0FD /* Pods_CouchCoach.framework in Frameworks */,
+				C50CD494F2886833BA5B5B57 /* Pods_CouchCoach.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +115,8 @@
 		18818DB3F73E29E50183BA3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				935EC4A7DC6124DDE10C48EA /* Pods-CouchCoach.debug.xcconfig */,
-				02500508B03044377D68D52D /* Pods-CouchCoach.release.xcconfig */,
+				8B4E49D80962EC0504B9876A /* Pods-CouchCoach.debug.xcconfig */,
+				81512E027FF1963902135A2D /* Pods-CouchCoach.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -130,10 +140,47 @@
 		3806D61C25F843AB0065EE36 /* Recommendation */ = {
 			isa = PBXGroup;
 			children = (
+				3806D63125FB47F40065EE36 /* Cells */,
+				3806D62D25FB45A30065EE36 /* Recommendation.swift */,
 				3806D61D25F844B70065EE36 /* Recommendation.storyboard */,
 				3806D61F25F8458A0065EE36 /* RecommendationViewController.swift */,
 			);
 			path = Recommendation;
+			sourceTree = "<group>";
+		};
+		3806D62425FB44180065EE36 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3806D62525FB44180065EE36 /* HeaderEventTableViewCell.swift */,
+				3806D62625FB44180065EE36 /* HourlyEventsTableViewCell.swift */,
+				3806D62725FB44180065EE36 /* DoSomethingTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3806D63125FB47F40065EE36 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3806D62C25FB45A30065EE36 /* RecCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3806D63425FBD3A90065EE36 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				38DF861025C0DE1F003C1369 /* FeedViewController.swift */,
+				3806D63725FBD3C60065EE36 /* cell */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		3806D63725FBD3C60065EE36 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				3806D63525FBD3C10065EE36 /* FeedTableViewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		38DF860025C0DE1F003C1369 = {
@@ -142,7 +189,7 @@
 				38DF860B25C0DE1F003C1369 /* CouchCoach */,
 				38DF860A25C0DE1F003C1369 /* Products */,
 				18818DB3F73E29E50183BA3B /* Pods */,
-				B2869F230F6597A26FB8CEA3 /* Frameworks */,
+				CF35FBF433F91F6E6205F3BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,7 +215,7 @@
 				38DF866525C38366003C1369 /* Alice Testing */,
 				38DF866425C3835B003C1369 /* Malia Testing */,
 				38DF867125C9D91E003C1369 /* Calendar */,
-				38DF861025C0DE1F003C1369 /* ViewController.swift */,
+				3806D63425FBD3A90065EE36 /* Feed */,
 				3806D61C25F843AB0065EE36 /* Recommendation */,
 				38DF861225C0DE1F003C1369 /* Main.storyboard */,
 				38DF861825C0DE20003C1369 /* Assets.xcassets */,
@@ -226,9 +273,8 @@
 		38DF867125C9D91E003C1369 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				3806D62425FB44180065EE36 /* Cells */,
 				38DF867225C9D944003C1369 /* CalendarViewController.swift */,
-				3806D61225E03E6D0065EE36 /* HeaderEventTableViewCell.swift */,
-				3806D61425E1A5C40065EE36 /* HourlyEventsTableViewCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -241,14 +287,15 @@
 				339A1BC225F80E0B008E7316 /* WeatherManager.swift */,
 				38DF868D25CF72A4003C1369 /* CalendarManager.swift */,
 				387875E725D45AB100AD0E21 /* YelpManager.swift */,
+				3806D63225FB68320065EE36 /* DatabaseManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		B2869F230F6597A26FB8CEA3 /* Frameworks */ = {
+		CF35FBF433F91F6E6205F3BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				81E96E6474B5B03EF2C70351 /* Pods_CouchCoach.framework */,
+				0654EC6B8CA880FB3C29871D /* Pods_CouchCoach.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,12 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38DF862025C0DE20003C1369 /* Build configuration list for PBXNativeTarget "CouchCoach" */;
 			buildPhases = (
-				3361D68454C27E46918C8C33 /* [CP] Check Pods Manifest.lock */,
+				9D931036E5421D19720FF522 /* [CP] Check Pods Manifest.lock */,
 				38DF860525C0DE1F003C1369 /* Sources */,
 				38DF860625C0DE1F003C1369 /* Frameworks */,
 				38DF860725C0DE1F003C1369 /* Resources */,
-				59DE144AF670B080AF54B7DA /* [CP] Embed Pods Frameworks */,
-				07770FCFEBBDACA42ACA59FB /* [CP] Copy Pods Resources */,
+				4C4D743F963C9B9A89EE0C3F /* [CP] Embed Pods Frameworks */,
+				38CB7380775815131B08A4AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,7 +377,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07770FCFEBBDACA42ACA59FB /* [CP] Copy Pods Resources */ = {
+		38CB7380775815131B08A4AC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -347,7 +394,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3361D68454C27E46918C8C33 /* [CP] Check Pods Manifest.lock */ = {
+		4C4D743F963C9B9A89EE0C3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D931036E5421D19720FF522 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,23 +433,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		59DE144AF670B080AF54B7DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CouchCoach/Pods-CouchCoach-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -393,19 +440,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3806D63325FB68320065EE36 /* DatabaseManager.swift in Sources */,
 				3806D61B25F6F4A50065EE36 /* DateExtensions.swift in Sources */,
 				38DF866B25C3840F003C1369 /* MaliaFirstViewController.swift in Sources */,
 				387875E825D45AB100AD0E21 /* YelpManager.swift in Sources */,
 				38DF866725C383B6003C1369 /* AndrewFirstViewController.swift in Sources */,
 				339A1BC325F80E0B008E7316 /* WeatherManager.swift in Sources */,
 				38DF868225CF195F003C1369 /* CustomCell.swift in Sources */,
-				38DF861125C0DE1F003C1369 /* ViewController.swift in Sources */,
+				38DF861125C0DE1F003C1369 /* FeedViewController.swift in Sources */,
 				33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */,
+				3806D63025FB45A30065EE36 /* Recommendation.swift in Sources */,
+				3806D63625FBD3C10065EE36 /* FeedTableViewCell.swift in Sources */,
 				38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */,
+				3806D62925FB44180065EE36 /* HourlyEventsTableViewCell.swift in Sources */,
 				38DF867025C38B8A003C1369 /* AuthViewController.swift in Sources */,
-				3806D61525E1A5C40065EE36 /* HourlyEventsTableViewCell.swift in Sources */,
 				339A1BE025F82C14008E7316 /* CurrentWeather.swift in Sources */,
 				38DF868725CF21CD003C1369 /* AuthenticationManager.swift in Sources */,
+				3806D62F25FB45A30065EE36 /* RecCell.swift in Sources */,
+				3806D62825FB44180065EE36 /* HeaderEventTableViewCell.swift in Sources */,
 				38DF860F25C0DE1F003C1369 /* SceneDelegate.swift in Sources */,
 				38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */,
 				33DC7EC525E466E00051543D /* YTTableViewCell.swift in Sources */,
@@ -413,12 +465,12 @@
 				38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */,
 				33DC7EC825E466E60051543D /* Video.swift in Sources */,
 				33DC7EC125E466670051543D /* ytSearch.swift in Sources */,
-				3806D61325E03E6D0065EE36 /* HeaderEventTableViewCell.swift in Sources */,
 				38DF868325CF195F003C1369 /* Business.swift in Sources */,
 				38DF866925C383F3003C1369 /* AliceFirstViewController.swift in Sources */,
 				3806D62025F8458A0065EE36 /* RecommendationViewController.swift in Sources */,
 				3806D61825E6BFB90065EE36 /* YTTableResults.swift in Sources */,
 				38DF861725C0DE1F003C1369 /* CouchCoach.xcdatamodeld in Sources */,
+				3806D62A25FB44180065EE36 /* DoSomethingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +612,7 @@
 		};
 		38DF862125C0DE20003C1369 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 935EC4A7DC6124DDE10C48EA /* Pods-CouchCoach.debug.xcconfig */;
+			baseConfigurationReference = 8B4E49D80962EC0504B9876A /* Pods-CouchCoach.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -579,7 +631,7 @@
 		};
 		38DF862225C0DE20003C1369 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02500508B03044377D68D52D /* Pods-CouchCoach.release.xcconfig */;
+			baseConfigurationReference = 81512E027FF1963902135A2D /* Pods-CouchCoach.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

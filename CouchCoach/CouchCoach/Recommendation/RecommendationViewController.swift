@@ -1,10 +1,15 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import EventKit
+import EventKitUI
 
 class RecommendationViewController: UIViewController {
 
     @IBOutlet weak var recommendationsTableView: UITableView!
+
+    let recCellIdentifier = "recCell"
+
     var recommendations: [NSDictionary] = []
     var recommendationList: [Recommendation] = []
 
@@ -13,10 +18,9 @@ class RecommendationViewController: UIViewController {
         
         recommendationsTableView.delegate = self
         recommendationsTableView.dataSource = self
-        recommendationsTableView.register(UINib(nibName: "RecCell", bundle: nil), forCellReuseIdentifier: "recCell")
-        recommendationsTableView.separatorStyle = .none
-
+        
     }
+
     override func viewWillAppear(_ animated: Bool) {
         let badConditions = ["Thunderstorm", "Drizzle", "Rain", "Snow"]
         let Lat: Double = Double(LocationManager.shared.lastLocation?.coordinate.latitude ?? 0)
@@ -73,27 +77,60 @@ extension RecommendationViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recommendationList.count
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recCell", for: indexPath) as! RecCell
-        cell.nameLabel.text = recommendationList[indexPath.row].name
-        cell.infoLabel.text = recommendationList[indexPath.row].info
-        cell.detailLabel.text = recommendationList[indexPath.row].detail
-        let image_url = recommendationList[indexPath.row].thumbnail ?? ""
-        let attributedString = NSMutableAttributedString(string: "Link to Website")
-        let link = recommendationList[indexPath.row].url
-        let url = URL(string: link ?? "")!
 
-        attributedString.setAttributes([.link: url], range: NSMakeRange(0, 15))
-        cell.urlTextView.attributedText = attributedString
-    
-        cell.thumbnailImage.loadImage(from: image_url)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "recCell", for: indexPath) as? RecCell {
+
+            cell.configureWith(recommendationList[indexPath.row], delegate: self)
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 
+extension RecommendationViewController: RecommendationViewControllerDelegate {
+
+    func visitWebsite(_ link: String) {
+        guard let url = URL(string: link) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+
+    func scheduleButtonPressed(with recommendation: Recommendation) {
+        let eventVC = EKEventEditViewController()
+        eventVC.editViewDelegate = self
+        eventVC.eventStore = EKEventStore()
+        let event = EKEvent(eventStore: eventVC.eventStore)
+        event.title = recommendation.name ?? ""
+        event.url = URL(string: recommendation.url ?? "")
+        event.notes = recommendation.info ?? ""
+
+        eventVC.event = event
+        present(eventVC, animated: true)
+    }
+}
+
+//MARK: - EKEventEditViewDelegate
+extension RecommendationViewController: EKEventEditViewDelegate {
+    // This is the function called when the event edit page is dismissed
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        switch action {
+        case .canceled, .deleted:
+            dismiss(animated: true, completion: nil)
+        case .saved:
+            guard let event = controller.event else {
+                dismiss(animated: true, completion: nil)
+                return
+            }
+            CalendarManager.shared.insertEvent(event)
+            //TODO: Record in the database that this event was used
+            dismiss(animated: true, completion: nil)
+        @unknown default:
+            dismiss(animated: true, completion: nil)
+        }
+    }
+}
