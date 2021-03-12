@@ -21,6 +21,8 @@ class AndrewFirstViewController: UIViewController, TTGTextTagCollectionViewDeleg
     
     @IBOutlet weak var saveNotif: UILabel!
     
+   
+    
     override func viewDidLoad() {
         collectionView.alignment = .center
         collectionView.delegate = self

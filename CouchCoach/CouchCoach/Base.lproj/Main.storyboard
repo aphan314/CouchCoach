@@ -338,10 +338,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="rxM-Ub-io6" kind="relationship" relationship="viewControllers" id="bc7-dl-WLh"/>
-                        <segue destination="B5c-aH-3xo" kind="relationship" relationship="viewControllers" id="dhT-AN-AGB"/>
                         <segue destination="pXu-iD-3r2" kind="relationship" relationship="viewControllers" id="h28-r6-HK1"/>
                         <segue destination="LhK-dO-gqw" kind="relationship" relationship="viewControllers" id="GTq-mg-pRs"/>
                         <segue destination="l0W-aO-U7h" kind="relationship" relationship="viewControllers" id="aKa-bY-MIn"/>
+                        <segue destination="efQ-pL-yBu" kind="relationship" relationship="viewControllers" id="pas-uH-yts"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRP-EA-tfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -356,17 +356,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJf-s9-mB6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="471"/>
-        </scene>
-        <!--AndrewTesting-->
-        <scene sceneID="SXz-YV-qcS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AndrewTesting" id="B5c-aH-3xo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1SU-Tx-pz5"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ai-TG-aMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="740" y="613"/>
+            <point key="canvasLocation" x="600" y="534"/>
         </scene>
         <!--AliceTesting-->
         <scene sceneID="dYu-Z0-mw0">
@@ -377,6 +367,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRb-Uc-ngn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1673" y="613"/>
+        </scene>
+        <!--AndrewTesting-->
+        <scene sceneID="mQ4-9J-vb1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AndrewTesting" id="efQ-pL-yBu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="CH2-mW-Qhg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Exh-TI-Ayd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="613"/>
         </scene>
         <!--MaliaTesting-->
         <scene sceneID="mgV-cv-Bn3">
