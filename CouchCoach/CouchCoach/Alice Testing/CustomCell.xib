@@ -82,8 +82,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7g-iG-p0b">
+                                <rect key="frame" x="253" y="198" width="109" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Not Interested"/>
+                                <connections>
+                                    <action selector="didClickNotInt:" destination="63a-5q-Q98" eventType="touchUpInside" id="Vfv-zo-soy"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1s-Sh-DnS">
-                                <rect key="frame" x="280" y="198" width="37" height="33"/>
+                                <rect key="frame" x="253" y="163" width="37" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Save"/>
@@ -103,6 +112,7 @@
                 <outlet property="categoriesLabel" destination="ddD-qV-Src" id="V2h-M6-U23"/>
                 <outlet property="isClosedLabel" destination="fIO-Za-7by" id="qbu-uc-xg8"/>
                 <outlet property="nameLabel" destination="1gy-0t-ijU" id="s5e-T6-AxJ"/>
+                <outlet property="notInterestedButton" destination="y7g-iG-p0b" id="0iP-n5-ITh"/>
                 <outlet property="parentView" destination="T3b-f4-mFW" id="o4n-oX-bZk"/>
                 <outlet property="phoneLabel" destination="Wsr-1g-wkr" id="WXa-dF-kLY"/>
                 <outlet property="priceLabel" destination="M75-60-C3W" id="kR1-l5-1C4"/>
@@ -110,7 +120,7 @@
                 <outlet property="saveButton" destination="V1s-Sh-DnS" id="ZwZ-Yj-S84"/>
                 <outlet property="websiteTextView" destination="M5h-4m-jkD" id="Tdc-HJ-ryG"/>
             </connections>
-            <point key="canvasLocation" x="-239.13043478260872" y="12.723214285714285"/>
+            <point key="canvasLocation" x="-191" y="19"/>
         </tableViewCell>
     </objects>
     <resources>

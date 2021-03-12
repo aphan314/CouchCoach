@@ -12,32 +12,72 @@ class AliceSecondViewController: UIViewController {
 
         var businesses: [Business] = []
         var term = ""
-        var arr: [Int] = []
-        var dict_arr: [NSDictionary] = []
+        var save: [Int] = []
+        var not: [Int] = []
+        var saved_arr: [NSDictionary] = []
+        var not_arr: [NSDictionary] = []
+
         override func viewDidLoad() {
             super.viewDidLoad()
             businessTableView.delegate = self
             businessTableView.dataSource = self
             businessTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
             businessTableView.separatorStyle = .none
-
-            YelpManager.shared.retrieveBusinesses(latitude: Latitude, longitude: Longitude, term: term,
-                           limit: 20, sortBy: "distance", locale: "en_US") { (response, error) in
-
-                            if let response = response {
-                                self.businesses = response
-                                DispatchQueue.main.async {
-                                    self.businessTableView.reloadData()
-                                }
-                            }
-            }
+            
             let db = Firestore.firestore()
             
             let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
             
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {
-                    self.dict_arr = document.data()?["yelp"] as! [NSDictionary]
+                    self.not_arr = document.data()?["yelp_not"] as! [NSDictionary]
+                }
+            }
+            YelpManager.shared.retrieveBusinesses(latitude: Latitude, longitude: Longitude, term: term,
+                           limit: 20, sortBy: "distance", locale: "en_US") { (response, error) in
+
+                            if let response = response {
+                                var temp = response
+                                var count = 0
+                                var indices: [Int] = []
+                                for b in temp {
+                                    let dictionary: NSDictionary = [
+                                        "id" : b.id,
+                                        "name" : b.name,
+                                        "address" : b.address,
+                                        "display_phone" : b.display_phone,
+                                        "categories" : b.categories,
+                                        "rating" : b.rating,
+                                        "price" : b.price,
+                                        "is_closed" : b.is_closed,
+                                        "website" : b.website,
+                                        "image_url" : b.image_url
+                                    ]
+                                    if(self.not_arr.contains(dictionary)){
+                                        indices.append(count)
+                                    }
+                                    count = count + 1
+                                }
+                                for(ind, t) in temp.enumerated(){
+                                    if(!indices.contains(ind)){
+                                        self.businesses.append(t)
+                                    }
+                                }
+                                DispatchQueue.main.async {
+                                    self.businessTableView.reloadData()
+                                }
+                            }
+            }
+        }
+    
+        override func viewWillAppear(_ animated: Bool) {
+            let db = Firestore.firestore()
+            
+            let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    self.saved_arr = document.data()?["yelp_saved"] as! [NSDictionary]
                 }
             }
         }
@@ -55,28 +95,54 @@ class AliceSecondViewController: UIViewController {
 }
 
 extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource, cDelegate {
-    func didClickButton(index: Int) {
+    func didClickButton(index: Int, value: Int) {
         let db = Firestore.firestore()
-        arr.append(index)
-        let uarr = Array(Set(arr))
-        var barr: [NSDictionary] = []
-        for ind in uarr {
-            let dictionary: NSDictionary = [
-                "id" : businesses[ind].id,
-                "name" : businesses[ind].name,
-                "address" : businesses[ind].address,
-                "display_phone" : businesses[ind].display_phone,
-                "categories" : businesses[ind].categories,
-                "rating" : businesses[ind].rating,
-                "price" : businesses[ind].price,
-                "is_closed" : businesses[ind].is_closed,
-                "website" : businesses[ind].website,
-                "image_url" : businesses[ind].image_url
-            ]
-            barr.append(dictionary)
+        if(value == 1){
+            save.append(index)
+            let uarr = Array(Set(save))
+            var barr: [NSDictionary] = []
+            for ind in uarr {
+                let dictionary: NSDictionary = [
+                    "id" : businesses[ind].id,
+                    "name" : businesses[ind].name,
+                    "address" : businesses[ind].address,
+                    "display_phone" : businesses[ind].display_phone,
+                    "categories" : businesses[ind].categories,
+                    "rating" : businesses[ind].rating,
+                    "price" : businesses[ind].price,
+                    "is_closed" : businesses[ind].is_closed,
+                    "website" : businesses[ind].website,
+                    "image_url" : businesses[ind].image_url
+                ]
+                barr.append(dictionary)
+            }
+            let fin_arr = Array(Set(barr + self.saved_arr))
+            db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["yelp_saved":fin_arr as! [NSDictionary]])
         }
-        let fin_arr = Array(Set(barr + self.dict_arr))
-        db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["yelp":fin_arr as! [NSDictionary]])
+        else if(value == 2){
+            not.append(index)
+            let uarr = Array(Set(not))
+            var barr: [NSDictionary] = []
+            for ind in uarr {
+                let dictionary: NSDictionary = [
+                    "id" : businesses[ind].id,
+                    "name" : businesses[ind].name,
+                    "address" : businesses[ind].address,
+                    "display_phone" : businesses[ind].display_phone,
+                    "categories" : businesses[ind].categories,
+                    "rating" : businesses[ind].rating,
+                    "price" : businesses[ind].price,
+                    "is_closed" : businesses[ind].is_closed,
+                    "website" : businesses[ind].website,
+                    "image_url" : businesses[ind].image_url
+                ]
+                barr.append(dictionary)
+            }
+            let fin_arr = Array(Set(barr + self.not_arr))
+            db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["yelp_not":fin_arr as! [NSDictionary]])
+            businesses.remove(at: index)
+            businessTableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
