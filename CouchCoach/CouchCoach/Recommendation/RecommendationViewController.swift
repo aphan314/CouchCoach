@@ -58,7 +58,7 @@ class RecommendationViewController: UIViewController {
                                 recommendation.id = recommend.value(forKey: "id") as? String
                                 recommendation.name = recommend.value(forKey: "name") as? String
                                 recommendation.info = recommend.value(forKey: "address") as? String
-                                recommendation.detail = recommend.value(forKey: "rating") as? String
+                                recommendation.detail = "\(recommend.value(forKey: "rating") ?? "")/5.0"
                                 recommendation.url = recommend.value(forKey: "website") as? String
                                 recommendation.thumbnail = recommend.value(forKey: "image_url") as? String
                                 self.recommendationList.append(recommendation)
@@ -92,8 +92,13 @@ extension RecommendationViewController: UITableViewDelegate, UITableViewDataSour
 extension RecommendationViewController: RecommendationViewControllerDelegate {
 
     func visitWebsite(_ link: String) {
-        guard let url = URL(string: link) else {
+        guard var url = URL(string: link) else {
             return
+        }
+        if(link.contains("youtube")){
+            let index = link.index(link.startIndex, offsetBy: 35)
+            let mySubstring = link[..<index]
+            url = URL(string: "http://" + String(mySubstring ?? ""))!
         }
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -106,7 +111,14 @@ extension RecommendationViewController: RecommendationViewControllerDelegate {
         eventVC.eventStore = EKEventStore()
         let event = EKEvent(eventStore: eventVC.eventStore)
         event.title = recommendation.name ?? ""
-        event.url = URL(string: recommendation.url ?? "")
+        let temp = recommendation.url ?? ""
+        var url = URL(string: recommendation.url ?? "")
+        if(temp.contains("youtube")){
+            let index = temp.index(temp.startIndex, offsetBy: 35)
+            let mySubstring = temp[..<index]
+            url = URL(string: "http://" + String(mySubstring ?? ""))!
+        }
+        event.url = url
         event.notes = recommendation.info ?? ""
 
         eventVC.event = event

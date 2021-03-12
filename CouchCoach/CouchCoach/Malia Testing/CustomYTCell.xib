@@ -72,7 +72,9 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.95420700309999995" green="0.70837074519999998" blue="0.72266799209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.95420700309999995" green="0.70837074519999998" blue="0.72266799209999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="channelLabel" destination="d3u-wY-VDp" id="Y59-yJ-GxG"/>
                 <outlet property="notInterested" destination="sf8-Dt-NEO" id="z7A-cE-ufe"/>
