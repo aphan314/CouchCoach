@@ -20,12 +20,10 @@ class RecCell: UITableViewCell {
         self.contentLayer.layer.cornerRadius = 10
         nameLabel.text = recommendation.name
         infoLabel.text = recommendation.info
-        detailLabel.text = recommendation.detail
+        detailLabel.text = recommendation.detail ?? ""
         let image_url = recommendation.thumbnail ?? ""
         let attributedString = NSMutableAttributedString(string: "Link to Website")
-
         websiteButton.isHidden = (recommendation.url ?? "") == ""
-
         thumbnailImage.loadImage(from: image_url)
     }
 

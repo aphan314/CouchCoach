@@ -162,6 +162,7 @@ extension AliceSecondViewController: UITableViewDelegate, UITableViewDataSource,
         cell.addressLabel.text = businesses[indexPath.row].address
         cell.phoneLabel.text = businesses[indexPath.row].display_phone ?? "Phone Number Not Available"
         cell.categoriesLabel.text = businesses[indexPath.row].categories
+        
         cell.ratingLabel.text = String(businesses[indexPath.row].rating ?? 0.0) + "/5.0 rating"
         cell.priceLabel.text = businesses[indexPath.row].price ?? "-"
         let attributedString = NSMutableAttributedString(string: "Link to Website")
