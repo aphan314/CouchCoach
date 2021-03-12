@@ -11,7 +11,7 @@ class YelpManager {
                         locale: String,
                         completionHandler: @escaping ([Business]?, Error?) -> Void) {
 
-        let apikey = ""
+        let apikey = "dDJP1t-j5RxGcbWvnzRnqlm11imVhIO4k8x8_hstJ8D9_eSjh5D_1Mi0DoymOABdl0uqWYXScd9SfXtlvF49iH5Z041AAk2YWBywAR1vU4hnUC8A6teh_HQXMzwSYHYx"
 
         let baseURL = "https://api.yelp.com/v3/businesses/search?latitude=\(latitude)&longitude=\(longitude)&term=\(term)&limit=\(limit)&sort_by=\(sortBy)&locale=\(locale)"
 
