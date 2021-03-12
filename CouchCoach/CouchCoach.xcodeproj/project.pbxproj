@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		13544AD7782C9AD0C2A4A0FD /* Pods_CouchCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E96E6474B5B03EF2C70351 /* Pods_CouchCoach.framework */; };
+		336B476325FA28160034C6C8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B476225FA28160034C6C8 /* ProfileViewController.swift */; };
+		336B476625FAC29B0034C6C8 /* EmailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B476525FAC29B0034C6C8 /* EmailChangeViewController.swift */; };
+		336B476925FAE8DE0034C6C8 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B476825FAE8DE0034C6C8 /* PasswordChangeViewController.swift */; };
 		339A1BC325F80E0B008E7316 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BC225F80E0B008E7316 /* WeatherManager.swift */; };
 		339A1BE025F82C14008E7316 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A1BDF25F82C14008E7316 /* CurrentWeather.swift */; };
 		33DC7EC125E466670051543D /* ytSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC7EC025E466670051543D /* ytSearch.swift */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		02500508B03044377D68D52D /* Pods-CouchCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchCoach.release.xcconfig"; path = "Target Support Files/Pods-CouchCoach/Pods-CouchCoach.release.xcconfig"; sourceTree = "<group>"; };
+		336B476225FA28160034C6C8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		336B476525FAC29B0034C6C8 /* EmailChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChangeViewController.swift; sourceTree = "<group>"; };
+		336B476825FAE8DE0034C6C8 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
 		339A1BC225F80E0B008E7316 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		339A1BDF25F82C14008E7316 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		33DC7EC025E466670051543D /* ytSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ytSearch.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 			children = (
 				38DF865D25C3831C003C1369 /* AndrewTesting.storyboard */,
 				38DF866625C383B6003C1369 /* AndrewFirstViewController.swift */,
+				336B476225FA28160034C6C8 /* ProfileViewController.swift */,
 			);
 			path = "Andrew Testing";
 			sourceTree = "<group>";
@@ -219,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				38DF866F25C38B8A003C1369 /* AuthViewController.swift */,
+				336B476525FAC29B0034C6C8 /* EmailChangeViewController.swift */,
+				336B476825FAE8DE0034C6C8 /* PasswordChangeViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -399,6 +408,8 @@
 				38DF866725C383B6003C1369 /* AndrewFirstViewController.swift in Sources */,
 				339A1BC325F80E0B008E7316 /* WeatherManager.swift in Sources */,
 				38DF868225CF195F003C1369 /* CustomCell.swift in Sources */,
+				336B476325FA28160034C6C8 /* ProfileViewController.swift in Sources */,
+				336B476625FAC29B0034C6C8 /* EmailChangeViewController.swift in Sources */,
 				38DF861125C0DE1F003C1369 /* ViewController.swift in Sources */,
 				33DC7ECD25E4675A0051543D /* AliceSecondViewController.swift in Sources */,
 				38DF860D25C0DE1F003C1369 /* AppDelegate.swift in Sources */,
@@ -410,6 +421,7 @@
 				38DF868E25CF72A4003C1369 /* CalendarManager.swift in Sources */,
 				33DC7EC525E466E00051543D /* YTTableViewCell.swift in Sources */,
 				38DF867325C9D944003C1369 /* CalendarViewController.swift in Sources */,
+				336B476925FAE8DE0034C6C8 /* PasswordChangeViewController.swift in Sources */,
 				38DF868C25CF6B4A003C1369 /* LocationManager.swift in Sources */,
 				33DC7EC825E466E60051543D /* Video.swift in Sources */,
 				33DC7EC125E466670051543D /* ytSearch.swift in Sources */,
