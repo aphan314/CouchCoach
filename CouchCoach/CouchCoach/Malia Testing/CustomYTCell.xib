@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,47 +20,47 @@
                         <rect key="frame" x="13" y="6" width="367" height="150"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2Y-QW-Q6a">
-                                <rect key="frame" x="8" y="10" width="303" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2Y-QW-Q6a">
+                                <rect key="frame" x="8" y="10" width="33" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Published" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uW-cu-vk2">
-                                <rect key="frame" x="8" y="68" width="303" height="21"/>
+                                <rect key="frame" x="8" y="67.5" width="75" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3u-wY-VDp">
-                                <rect key="frame" x="8" y="39" width="303" height="21"/>
+                                <rect key="frame" x="8" y="38.5" width="62.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTZ-2a-P05">
-                                <rect key="frame" x="134" y="97" width="83" height="30"/>
+                                <rect key="frame" x="142" y="96" width="83" height="30"/>
                                 <state key="normal" title="Watch Later"/>
                                 <connections>
                                     <action selector="watchLaterPressed:" destination="pED-Xm-uqO" eventType="touchUpInside" id="V2T-oq-cvJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-Dt-NEO">
-                                <rect key="frame" x="8" y="97" width="99" height="30"/>
-                                <state key="normal" title="Not Interested"/>
-                                <connections>
-                                    <action selector="notIntPressed:" destination="pED-Xm-uqO" eventType="touchUpInside" id="Cb0-IE-rXQ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9W-Xs-d5R">
-                                <rect key="frame" x="265" y="97" width="79" height="30"/>
+                                <rect key="frame" x="271" y="96" width="79" height="30"/>
                                 <state key="normal" title="Watch Now"/>
                                 <connections>
                                     <action selector="watchNowPressed:" destination="pED-Xm-uqO" eventType="touchUpInside" id="tkv-cc-790"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-Dt-NEO">
+                                <rect key="frame" x="8" y="96" width="99" height="30"/>
+                                <state key="normal" title="Not Interested"/>
+                                <connections>
+                                    <action selector="notIntPressed:" destination="pED-Xm-uqO" eventType="touchUpInside" id="Cb0-IE-rXQ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.96593481299999995" blue="0.88636612889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sf8-Dt-NEO" firstAttribute="top" secondItem="5uW-cu-vk2" secondAttribute="bottom" constant="8" symbolic="YES" id="5Dq-U5-Cvw"/>
                             <constraint firstItem="M9W-Xs-d5R" firstAttribute="leading" secondItem="lTZ-2a-P05" secondAttribute="trailing" constant="35" id="6Wg-NJ-Cv1"/>
@@ -86,9 +85,4 @@
             <point key="canvasLocation" x="115.21739130434783" y="22.433035714285712"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
