@@ -12,9 +12,12 @@ class AliceFirstViewController: UIViewController {
         var tags = [String]()
         var searchTag = [String]()
         var searching = false
-
+        
         override func viewDidLoad() {
             super.viewDidLoad()
+        }
+    
+        override func viewWillAppear(_ animated: Bool) {
             let db = Firestore.firestore()
             
             let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
@@ -24,6 +27,25 @@ class AliceFirstViewController: UIViewController {
                     let arr = document.data()?["tags"] ?? []
                     self.tags = arr as! [String]
                     self.tagsTableView.reloadData()
+                }
+            }
+            let badConditions = ["Thunderstorm", "Drizzle", "Rain", "Snow"]
+            let Lat: Double = Double(LocationManager.shared.lastLocation?.coordinate.latitude ?? 0)
+            let Long: Double = Double(LocationManager.shared.lastLocation?.coordinate.longitude ?? 0)
+            WeatherManager.shared.retrieveWeather(lat: Lat, lon: Long) { (response, error) in
+                if let response = response {
+                    let weather = response
+                    let cond = weather.condition ?? ""
+                    if(badConditions.contains(cond)){
+                        // Create new Alert
+                        let alert = UIAlertController(title: "Weather Condition", message: "The weather in \(weather.city ?? "") is \(weather.condition ?? "") and temperature is \(weather.temp ?? 0) Fahrenheit. It is recommended that you stay indoor and do indoor activities today.", preferredStyle: .alert)
+
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+                        DispatchQueue.main.async {
+                            self.present(alert, animated: true)
+                        }
+                    }
                 }
             }
         }

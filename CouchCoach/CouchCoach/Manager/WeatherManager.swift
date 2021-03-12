@@ -17,7 +17,7 @@ struct Weather {
 
 class WeatherManager {
     static let shared = WeatherManager()
-    func retrieveWeather(lat: Double, lon: Double) -> Weather {
+    func retrieveWeather(lat: Double, lon: Double, completionHandler: @escaping (Weather?, Error?) -> Void) -> Void {
         
         let apikey = ""
         let baseUrl = "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apikey)&units=imperial"
@@ -49,14 +49,13 @@ class WeatherManager {
                 weather.conditionDesc = con[0].value(forKey: "description") as? String
                 weather.temp = main.value(forKey: "temp") as? Double
             
-                print(weather)
-     
+                completionHandler(weather, nil)
             } catch {
                 print("Caught error")
+                completionHandler(nil, error)
+
             }
             }.resume()
-        
-        return weather
         
     }
     

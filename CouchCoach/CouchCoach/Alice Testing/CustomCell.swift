@@ -22,6 +22,7 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var isClosedLabel: UILabel!
     @IBOutlet weak var businessImage: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var notInterestedButton: UIButton!
     
     var cDelegate: cDelegate?
     var index: IndexPath?
@@ -37,9 +38,12 @@ class CustomCell: UITableViewCell {
     }
 
     @IBAction func didClickSave(_ sender: UIButton) {
-        cDelegate?.didClickButton(index: (index?.row)!)
+        cDelegate?.didClickButton(index: (index?.row)!, value: 1)
     }
     
+    @IBAction func didClickNotInt(_ sender: Any) {
+        cDelegate?.didClickButton(index: (index?.row)!, value: 2)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
                 
@@ -48,6 +52,6 @@ class CustomCell: UITableViewCell {
 }
 
 protocol cDelegate : class {
-    func didClickButton(index: Int)
+    func didClickButton(index: Int, value: Int)
 
 }
