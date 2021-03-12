@@ -235,7 +235,7 @@
         <!--Calendar-->
         <scene sceneID="lrJ-Sq-y2v">
             <objects>
-                <viewController id="Mb1-fD-Bsr" customClass="CalendarViewController" customModule="CouchCoach" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="calendar" id="Mb1-fD-Bsr" customClass="CalendarViewController" customModule="CouchCoach" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VkK-vG-3LE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

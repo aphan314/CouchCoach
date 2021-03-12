@@ -19,7 +19,7 @@ class WeatherManager {
     static let shared = WeatherManager()
     func retrieveWeather(lat: Double, lon: Double, completionHandler: @escaping (Weather?, Error?) -> Void) -> Void {
         
-        let apikey = ""
+        let apikey = "97c73ef201bd0ea04ce450da672706bf"
         let baseUrl = "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apikey)&units=imperial"
         
         let url = URL(string:baseUrl)
