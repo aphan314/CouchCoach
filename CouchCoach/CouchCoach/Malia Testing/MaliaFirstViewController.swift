@@ -20,6 +20,25 @@ class MaliaFirstViewController: UIViewController {
     var searching = false
     var tags = [String]() //**
     
+    override func viewWillAppear(_ animated: Bool) {
+        //** add starting here
+        let db = Firestore.firestore()
+
+        let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let arr = document.data()?["tags"] ?? []
+                print(arr)
+                self.tags = arr as! [String]
+                print(self.tags)
+                //self.collectionView.addTags(arr as? [String], with:self.config)
+                self.tableView.reloadData()
+            }
+        }
+        //** to here
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //** add starting here
