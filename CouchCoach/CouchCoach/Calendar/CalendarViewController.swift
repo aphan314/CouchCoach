@@ -10,6 +10,7 @@ class CalendarViewController: UIViewController {
 
     let headerEventCell = "HeaderEventCell"
     let hourlyEventCell = "HourlyEventsTableViewCell"
+    let doSomethingCell = "doSomethingCell"
 
     var selectedDate = Date()
     var hourlyEvents: [Int: [EKEvent]]?
@@ -18,13 +19,18 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         calendar.delegate = self
         calendar.dataSource = self
-        eventsTableView.delegate = self
+        //eventsTableView.delegate = self
         eventsTableView.dataSource = self
         updateSelectedDate(with: selectedDate)
     }
 
     func updateSelectedDate(with date: Date) {
         selectedDate = date
+        hourlyEvents = CalendarManager.shared.fetchEvents(for: selectedDate)
+        eventsTableView.reloadData()
+    }
+
+    private func reloadEvents() {
         hourlyEvents = CalendarManager.shared.fetchEvents(for: selectedDate)
         eventsTableView.reloadData()
     }
@@ -66,7 +72,7 @@ extension CalendarViewController: UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        return 0
+        return 1
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -96,19 +102,19 @@ extension CalendarViewController: UITableViewDataSource {
                     let events = hourlyEvents[indexPath.section - 1],
                     let cell = tableView.dequeueReusableCell(withIdentifier: hourlyEventCell) as? HourlyEventsTableViewCell {
                     let event = events[indexPath.row]
-                    cell.configureWith(event: event)
+                    cell.configureWith(event: event, delegate: self)
                     return cell
+                } else {
+                    if let cell = tableView.dequeueReusableCell(withIdentifier: doSomethingCell) as? DoSomethingTableViewCell {
+                        cell.delegate = self
+                        return cell
+                    }
                 }
         default:
             return UITableViewCell()
         }
         return UITableViewCell()
     }
-}
-
-//MARK: - UITableViewDelegate
-extension CalendarViewController: UITableViewDelegate {
-
 }
 
 //MARK: - EKEventEditViewDelegate
@@ -124,9 +130,26 @@ extension CalendarViewController: EKEventEditViewDelegate {
                 return
             }
             CalendarManager.shared.insertEvent(event)
+            reloadEvents()
             dismiss(animated: true, completion: nil)
         @unknown default:
             dismiss(animated: true, completion: nil)
         }
+    }
+}
+
+//MARK: - FeedViewControllerDelegate
+extension CalendarViewController: CalendarHourlyEventsDelegate {
+    func viewMoreInfo(_ url: URL) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+}
+
+
+extension CalendarViewController: CalendarDoSomethingDelegate {
+    func navigateToExplore() {
+        tabBarController?.selectedIndex = 4
     }
 }

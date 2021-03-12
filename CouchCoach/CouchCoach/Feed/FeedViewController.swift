@@ -1,20 +1,25 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
     let logoutSegueIdentifier = "logoutSegue"
-    let upcomingEventCellIdentifier = "UpcomingEventsTableViewCell"
+    let feedCellIdentifier = "FeedCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         LocationManager.shared.startUpdatingLocation()
         tableView.dataSource = self
-        tableView.delegate = self
+        self.tableView.estimatedRowHeight = 120
+        self.tableView.rowHeight = UITableView.automaticDimension
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         AuthenticationManager.shared.logout { result in
@@ -40,7 +45,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
+extension FeedViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,15 +59,19 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: upcomingEventCellIdentifier) as? HourlyEventsTableViewCell {
-            cell.configureWith(event: CalendarManager.shared.events[indexPath.row])
+        if let cell = tableView.dequeueReusableCell(withIdentifier: feedCellIdentifier) as? FeedTableViewCell {
+            cell.configureWith(event: CalendarManager.shared.events[indexPath.row], delegate: self)
             return cell
         }
         return UITableViewCell()
     }
 }
 
-//MARK: - UITableViewDelegate
-extension ViewController: UITableViewDelegate {
-
+//MARK: - FeedViewControllerDelegate
+extension FeedViewController: FeedViewControllerDelegate {
+    func viewMoreInfo(_ url: URL) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
